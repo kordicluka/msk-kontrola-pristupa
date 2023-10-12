@@ -1,0 +1,150 @@
+@import "../App.scss";
+
+@import "../App.scss";
+
+.footer {
+  @include flex(column, center, center);
+  width: 100%;
+  position: relative;
+  background-color: $black;
+  margin-top: 10vh;
+
+  .box-container {
+    width: 100%;
+    padding: 3vh 12.5%;
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    padding-bottom: 5vh;
+    .box {
+      @include flex(column, flex-start, flex-start);
+      margin: 1rem 0;
+      width: calc(100% / 5);
+
+      &.first {
+        width: calc((100% / 5) * 2);
+        .logo {
+          height: 13vh;
+          width: 70%;
+          object-fit: contain;
+        }
+
+        p {
+          font: 0.8rem "Roboto Light", sans-serif;
+          padding-top: 0.6rem;
+          padding-bottom: 1.5rem;
+          color: $gray;
+          width: 70%;
+          text-align: left;
+        }
+
+        .socials {
+          @include flex(row, flex-start, flex-start);
+          gap: 1rem;
+
+          img {
+            width: 2.5rem;
+            height: 2.5rem;
+            cursor: pointer;
+            filter: grayscale(100%);
+
+            &:hover {
+              filter: grayscale(0%);
+            }
+          }
+        }
+      }
+
+      .logo {
+        height: 13vh;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: $white;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font: 1rem "Roboto Regular", sans-serif;
+      }
+
+      ul {
+        @include flex(column, flex-start, flex-start);
+        width: calc(100% - 1rem);
+        gap: 0.8rem;
+        list-style: none;
+
+        li {
+          color: $gray;
+          font: 0.75rem "Roboto Light", sans-serif;
+          a {
+            color: $gray;
+            font: 0.75rem "Roboto Light", sans-serif;
+            text-decoration: none;
+
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+
+        .btn {
+          color: $white;
+          font: 0.78rem "Roboto Regular", sans-serif;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .rights {
+    width: 100%;
+    padding: 0 12.5%;
+
+    @include flex(column, center, center);
+    gap: 0.5rem;
+
+    .bottom-container {
+      @include flex(row, center, center);
+      gap: 0.5rem;
+      position: relative;
+      width: 100%;
+
+      .links {
+        position: absolute;
+        left: 0;
+        @include flex(row, center, center);
+
+        a {
+          font-size: 0.7rem;
+          color: #ffffffbe;
+          margin-right: 0.5rem;
+          text-decoration: underline;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    hr {
+      width: 100%;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $light-gray;
+      opacity: 0.6;
+    }
+
+    p {
+      font-size: 0.7rem;
+      color: $gray;
+      padding: 1rem 0;
+    }
+  }
+}
