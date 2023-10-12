@@ -37,6 +37,13 @@ const Home = () => {
     description: (
       <>
         <p>Zgrade, Stanovi i ostalo</p>
+        <p>
+          Vaša firma se ističe u industriji kontrole pristupa u zgradama,
+          pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
+          tehnologija se temelji na sigurnim sebury uređajima, omogućujući
+          stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za brz
+          i pouzdan ulaz u objekte
+        </p>
       </>
     ),
     actions: (
@@ -60,79 +67,19 @@ const Home = () => {
           </div>
 
           <div className="slide__content">
-            <h2>{heroSlide.subtitle}</h2>
-            <h1>{heroSlide.title}</h1>
-            <div className="slide__description">{heroSlide.description}</div>
+            <div className="top">
+              <h2>{heroSlide.subtitle}</h2>
+              <h1>{heroSlide.title}</h1>
+              <div className="slide__description">{heroSlide.description}</div>
+            </div>
             <div className="slide__actions">{heroSlide.actions}</div>
-          </div>
-        </div>
-
-        <div className="hero__cards">
-          <div className="card first">
-            <h2>Zašto odabrati nas?</h2>
-
-            <p>
-              Naša tvrtka ima više od 10 godina iskustva u izradi i montaži
-              sustava za kontrolu pristupa.
-            </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={0.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </div>
-          <div className="card">
-            <div className="card__icon">
-              <img src={heroIconOne} alt="" />
-            </div>
-            <h3>Sigurnost pristupa</h3>
-            <p>
-              Kontrola pristupa je sustav koji omogućuje kontrolu pristupa
-              određenim područjima, prostorijama ili objektima.
-            </p>
-            <h4>100% sigurnost</h4>
-          </div>
-          <div className="card">
-            <div className="card__icon">
-              <img src={heroIconOne} alt="" />
-            </div>
-            <h3>Sigurnost pristupa</h3>
-            <p>
-              Kontrola pristupa je sustav koji omogućuje kontrolu pristupa
-              određenim područjima, prostorijama ili objektima.
-            </p>
-            <h4>100% sigurnost</h4>
-          </div>
-          <div className="card">
-            <div className="card__icon">
-              <img src={heroIconOne} alt="" />
-            </div>
-            <h3>Sigurnost pristupa</h3>
-            <p>
-              Kontrola pristupa je sustav koji omogućuje kontrolu pristupa
-              određenim područjima, prostorijama ili objektima.
-            </p>
-            <h4>100% sigurnost</h4>
           </div>
         </div>
       </div>
 
       <div className="about-us">
         <div className="content">
-          <div className="subtitle">
-            {" "}
-            <hr />
-            <h2>O nama</h2>
-          </div>
+          <h2>O nama</h2>
 
           <h1>Saznajte više informacija o našoj tvrtki</h1>
           <p>

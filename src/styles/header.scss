@@ -2,32 +2,51 @@
 
 .header {
   width: 100%;
-  height: calc(6.2vh + 5vh);
+  height: calc(7vh + 4vh);
   @include flex(column, flex-start, flex-start);
   z-index: 3;
-  position: sticky;
+  position: static;
   background: transparent;
   top: 0;
-  box-shadow: 0 0 10px rgba($color: $black, $alpha: 0.05);
+
   .top__header {
     @include flex(row, space-between, center);
-    background-color: $secondary;
+    background-color: $secondary-dark;
     gap: 1rem;
     width: 100%;
-    height: 5vh;
-    padding: 0 12.5%;
+    height: 4vh;
 
-    p {
-      font-size: 1rem;
-      font: 0.75rem "Roboto Light", sans-serif;
-      color: $light-gray;
+    .contact {
+      width: 40%;
+      @include flex(row, flex-start, center);
+      gap: 1rem;
+      height: 4vh;
+      background-color: $primary;
+      padding-left: 7.5vw;
+
+      div {
+        font: 0.9rem "Roboto Regular", sans-serif;
+        color: $white;
+        @include flex(row, center, center);
+        gap: 0.5rem;
+
+        svg {
+          height: 100%;
+          width: 2.5vh;
+        }
+
+        span {
+          font: 0.9rem "Roboto Light", sans-serif;
+        }
+      }
     }
 
     .socials {
       @include flex(row, flex-start, flex-start);
-      gap: 1rem;
+      gap: 0.8rem;
       height: 100%;
-      padding: 0.6rem 0;
+      padding: 0.5rem 0;
+      padding-right: 7.5vw;
 
       img {
         height: 100%;
@@ -39,22 +58,26 @@
 
   .navbar {
     width: 100%;
-    height: 6.2vh;
+    height: 7vh;
     position: relative;
     @include flex(row, space-between, center);
-    padding: 0 12.5%;
+    padding: 0 7.5%;
     z-index: 1;
-    background-color: rgba($color: $white, $alpha: 0.9);
-    border-bottom: 1px solid $light-gray;
+    background: transparent;
+    gap: 2rem;
     .navbar__left {
       padding: 0.3rem 0;
       height: 100%;
+      padding: 0.45rem;
       .logo {
         height: 100%;
+        width: 100%;
         cursor: pointer;
 
         img {
           height: 100%;
+          width: 100%;
+          object-fit: contain;
         }
       }
     }
@@ -70,12 +93,12 @@
       a {
         text-decoration: none;
         color: $black;
-        font: 0.85rem "Roboto Regular", sans-serif;
-        transition: all 0.3s ease-in-out;
+        font: 0.8rem "Roboto SemiBold", sans-serif;
         @include flex(row, center, center);
+        text-transform: uppercase;
 
         &:hover {
-          border-bottom: 1px solid $black;
+          color: $primary;
         }
       }
     }

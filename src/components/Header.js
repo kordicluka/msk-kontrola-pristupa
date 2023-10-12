@@ -13,8 +13,15 @@ const Header = () => {
     <div className="header">
       <div className="top__header">
         <div className="contact">
-          <p>Telefon: 091 - 390 / 5524</p>
-          <p>E-mail: info@msk.hr</p>
+          <div>
+            <span>Broj telefona:</span>
+            <span>091 - 390 / 5524</span>
+          </div>
+          <div>
+            <span>E-mail: </span>
+
+            <span>info@msk.hr</span>
+          </div>
         </div>
         <div className="socials">
           <img src={facebook_logo} alt="facebook_logo" />

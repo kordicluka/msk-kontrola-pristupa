@@ -45,11 +45,6 @@
             width: 2.5rem;
             height: 2.5rem;
             cursor: pointer;
-            filter: grayscale(100%);
-
-            &:hover {
-              filter: grayscale(0%);
-            }
           }
         }
       }
