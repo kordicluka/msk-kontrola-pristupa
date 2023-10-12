@@ -59,17 +59,18 @@
         opacity: 1;
 
         h1 {
-          font: 3rem "Roboto Bold", sans-serif;
+          font: 4rem "Roboto Black", sans-serif;
           color: $white;
+          letter-spacing: 1px;
         }
 
         h2 {
-          font: 1rem "Roboto Medium", sans-serif;
+          font: 2rem "Roboto Light", sans-serif;
           color: $light-gray;
         }
 
         p {
-          font: 0.8rem "Roboto Light", sans-serif;
+          font: 1rem "Roboto Light", sans-serif;
           color: $light-gray;
         }
 

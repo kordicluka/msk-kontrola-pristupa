@@ -2,13 +2,27 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import "../styles/header.scss";
+import facebook_logo from "../assets/images/socials/facebook_logo.png";
+import instagram_logo from "../assets/images/socials/instagram_logo.png";
+import twitter_logo from "../assets/images/socials/twitter_logo.png";
+import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
+import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="top__header">
-        <p>Telefon: 091 - 390 / 5524</p>
-        <p>E-mail: info@msk.hr</p>
+        <div className="contact">
+          <p>Telefon: 091 - 390 / 5524</p>
+          <p>E-mail: info@msk.hr</p>
+        </div>
+        <div className="socials">
+          <img src={facebook_logo} alt="facebook_logo" />
+          <img src={instagram_logo} alt="instagram_logo" />
+          <img src={twitter_logo} alt="twitter_logo" />
+          <img src={tiktok_logo} alt="tiktok_logo" />
+          <img src={pinterest_logo} alt="pinterest_logo" />
+        </div>
       </div>
       <div className="navbar">
         <div className="navbar__left">

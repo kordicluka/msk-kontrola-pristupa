@@ -32,17 +32,11 @@ const Home = () => {
   const heroSlide = {
     title: "KONTROLA PRISTUPA",
     shortTitle: "Početni slide",
-    subtitle: "KVALITETA I SIGURNOST",
+    subtitle: "Kvaliteta i sigurnost",
     image: contactImage,
     description: (
       <>
         <p>Zgrade, Stanovi i ostalo</p>
-        <p>
-          Koristimo Sebury uređaje, omogućujući stanarima i ostalima da koriste
-          privjeske, kartice ili PIN-ove za brz i pouzdan ulaz u objekte.
-          Poboljšajte sigurnost i praktičnost s našim rješenjima za kontrolu
-          pristupa.
-        </p>
       </>
     ),
     actions: (
