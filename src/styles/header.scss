@@ -5,9 +5,10 @@
   height: calc(7vh + 4vh);
   @include flex(column, flex-start, flex-start);
   z-index: 3;
-  position: static;
+  position: sticky;
   background: transparent;
   top: 0;
+  z-index: 1000000000000;
 
   .top__header {
     @include flex(row, space-between, center);
@@ -63,7 +64,7 @@
     @include flex(row, space-between, center);
     padding: 0 7.5%;
     z-index: 1;
-    background: transparent;
+    background: $secondary;
     gap: 2rem;
     .navbar__left {
       padding: 0.3rem 0;
@@ -92,8 +93,8 @@
 
       a {
         text-decoration: none;
-        color: $black;
-        font: 0.8rem "Roboto SemiBold", sans-serif;
+        color: $white;
+        font: 0.8rem "Roboto Regular", sans-serif;
         @include flex(row, center, center);
         text-transform: uppercase;
 

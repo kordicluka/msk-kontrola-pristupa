@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo-white.png";
 import "../styles/header.scss";
 import facebook_logo from "../assets/images/socials/facebook_logo.png";
 import instagram_logo from "../assets/images/socials/instagram_logo.png";

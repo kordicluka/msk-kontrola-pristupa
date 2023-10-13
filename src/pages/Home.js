@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import heroSlideImageFirst from "../assets/images/hero-slide-1.jpg";
+import heroSlideImageSecond from "../assets/images/hero-slide-2.jpg";
+import heroSlideImageThird from "../assets/images/hero-slide-3.jpg";
 import templateImage from "../assets/images/template-image.jpg";
-import heroIconOne from "../assets/images/hero__icon_1.png";
 import contactImage from "../assets/images/contact.jpg";
+import projectIcon from "../assets/images/project-icon.svg";
 import { Context } from "../App";
-
+import Typewriter from "typewriter-effect";
 import "../styles/home.scss";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -14,10 +17,11 @@ const Home = () => {
   const [selectedProjectType, setSelectedProjectType] =
     useState("Svi projekti");
   const { projects, setProjects } = React.useContext(Context);
+  const percentage = 66;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount((count) => (count + 1) % 4);
+      setCount((count) => (count + 1) % 3);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -29,59 +33,14 @@ const Home = () => {
     ]);
   }, [projects]);
 
-  const heroSlide = {
-    title: "KONTROLA PRISTUPA",
-    shortTitle: "Početni slide",
-    subtitle: "Kvaliteta i sigurnost",
-    image: contactImage,
-    description: (
-      <>
-        <p>Zgrade, Stanovi i ostalo</p>
-        <p>
-          Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-          pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
-          tehnologija se temelji na sigurnim sebury uređajima, omogućujući
-          stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za brz
-          i pouzdan ulaz u objekte
-        </p>
-      </>
-    ),
-    actions: (
-      <>
-        <Link className="btn" to="/kontaktiraj-nas">
-          naši uredaji
-        </Link>
-        <Link className="link" to="/kontaktiraj-nas">
-          Saznajte više
-        </Link>
-      </>
-    ),
-  };
-
-  return (
-    <div className="page home">
-      <div className="hero">
-        <div className={`slide`}>
-          <div className="slide__image">
-            <img src={heroSlide.image} alt="" />
-          </div>
-
-          <div className="slide__content">
-            <div className="top">
-              <h2>{heroSlide.subtitle}</h2>
-              <h1>{heroSlide.title}</h1>
-              <div className="slide__description">{heroSlide.description}</div>
-            </div>
-            <div className="slide__actions">{heroSlide.actions}</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="about-us">
-        <div className="content">
-          <h2>O nama</h2>
-
-          <h1>Saznajte više informacija o našoj tvrtki</h1>
+  const heroSlides = [
+    {
+      title: "KONTROLA PRISTUPA",
+      subtitle: "Kvaliteta i sigurnost",
+      image: contactImage,
+      description: (
+        <>
+          <p>Zgrade, Stanovi i ostalo</p>
           <p>
             Vaša firma se ističe u industriji kontrole pristupa u zgradama,
             pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
@@ -89,7 +48,146 @@ const Home = () => {
             stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
             brz i pouzdan ulaz u objekte
           </p>
+        </>
+      ),
+      actions: (
+        <>
+          <Link className="btn" to="/kontaktiraj-nas">
+            naši uredaji
+          </Link>
+          <Link className="link" to="/kontaktiraj-nas">
+            Saznajte više
+          </Link>
+        </>
+      ),
+    },
+    {
+      title: "DRUGI SLIDE",
+      subtitle: "Kvaliteta i sigurnost",
+      image: heroSlideImageSecond,
+      description: (
+        <>
+          <p>Zgrade, Stanovi i ostalo</p>
+          <p>
+            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
+            pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
+            tehnologija se temelji na sigurnim sebury uređajima, omogućujući
+            stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
+            brz i pouzdan ulaz u objekte
+          </p>
+        </>
+      ),
+      actions: (
+        <>
+          <Link className="btn" to="/kontaktiraj-nas">
+            naši uredaji
+          </Link>
+          <Link className="link" to="/kontaktiraj-nas">
+            Saznajte više
+          </Link>
+        </>
+      ),
+    },
 
+    {
+      title: "ELEKTRONSKI KONTROLERI",
+      subtitle: "Kvaliteta i sigurnost",
+      image: heroSlideImageThird,
+      description: (
+        <>
+          <p>Koristimo sebury uređaje</p>
+          <p>
+            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
+            pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
+            tehnologija se temelji na sigurnim sebury uređajima, omogućujući
+            stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
+            brz i pouzdan ulaz u objekte
+          </p>
+        </>
+      ),
+      actions: (
+        <>
+          <Link className="btn" to="/kontaktiraj-nas">
+            naši uredaji
+          </Link>
+          <Link className="link" to="/kontaktiraj-nas">
+            Saznajte više
+          </Link>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div className="page home">
+      <div className="hero">
+        {heroSlides.map((slide, index) => (
+          <div
+            className={`slide ${count === index ? "active" : ""}`}
+            key={index}
+          >
+            <div className="slide__image">
+              <img src={slide.image} alt="" />
+            </div>
+
+            <div className="slide__content">
+              <div className="top">
+                <h2>{slide.subtitle}</h2>
+                <h1>{slide.title}</h1>
+                <div className="slide__description">{slide.description}</div>
+              </div>
+              <div className="slide__actions">{slide.actions}</div>
+            </div>
+          </div>
+        ))}
+
+        <div className="control__butons">
+          {heroSlides.map((slide, index) => (
+            <button
+              className={count === index ? "active" : ""}
+              onClick={() => setCount(index)}
+              key={index}
+            >
+              <span className="index">
+                {index + 1 < 10 ? `0${index + 1}` : index + 1}
+              </span>
+              <span className="title">{slide.title}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="about-us">
+        <div className="image">
+          <img src={heroSlideImageFirst} alt="" />
+          <div className="hero__numbers">
+            <div className="item">
+              <img src={projectIcon} alt="" />
+              <p className="number">25+</p>
+              <p className="text"> Završenih projekata</p>{" "}
+            </div>
+          </div>
+        </div>
+
+        <div className="content">
+          <Typewriter
+            options={{
+              strings: [
+                "Saznajte više o nama",
+                "Pogledajte zašto izabrati nas?",
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+          <h1>O nama</h1>
+          <p>
+            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
+            pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
+            tehnologija se temelji na sigurnim sebury uređajima, omogućujući
+            stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
+            brz i pouzdan ulaz u objekte
+          </p>
           <div className="list">
             <div className="item">
               <div className="rectangle"></div>
@@ -114,28 +212,33 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <CircularProgressbar
+            value={percentage}
+            text={`${percentage}%`}
+            styles={buildStyles({
+              // Rotation of path and trail, in number of turns (0-1)
+              rotation: 0.25,
 
-          <Link className="btn" to="/o-nama">
-            SAZNAJTE VIŠE
-          </Link>
-        </div>
+              // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+              strokeLinecap: "butt",
 
-        <div className="image">
-          <img src={heroSlideImageFirst} alt="" />
-          <div className="hero__numbers">
-            <div className="item">
-              <p className="number">10 +</p>
-              <p className="text">Godina iskustva</p>
-            </div>
-            <div className="item">
-              <p className="number">25 +</p>
-              <p className="text"> Završenih projekata</p>
-            </div>
-            <div className="item">
-              <p className="number">25 +</p>
-              <p className="text"> Završenih projekata</p>
-            </div>
-          </div>
+              // Text size
+              textSize: "16px",
+
+              // How long animation takes to go from one percentage to another, in seconds
+              pathTransitionDuration: 0.5,
+
+              // Can specify path transition in more detail, or remove it entirely
+              // pathTransition: 'none',
+
+              // Colors
+              pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+              textColor: "#f88",
+              trailColor: "#d6d6d6",
+              backgroundColor: "#3e98c7",
+            })}
+          />
+          ;
         </div>
       </div>
 

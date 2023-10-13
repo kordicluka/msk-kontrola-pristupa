@@ -1,10 +1,9 @@
 @import "../App.scss";
 
 .home {
-  z-index: 0;
   .hero {
     width: 100%;
-    height: 80vh;
+    height: 75vh;
     background-color: $white;
     position: relative;
     @include flex(column, center, center);
@@ -20,7 +19,6 @@
       background-position: center;
       background-repeat: no-repeat;
       transition: all 0.3s ease-in-out;
-      z-index: 1;
 
       .slide__image {
         width: 100%;
@@ -28,6 +26,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        opacity: 0;
 
         &::before {
           content: "";
@@ -48,9 +47,33 @@
         }
       }
 
+      &.active {
+        .slide__image {
+          opacity: 1;
+        }
+
+        .slide__content {
+          h1 {
+            transform: translateX(0%);
+          }
+
+          h2 {
+            transform: translateX(0%);
+          }
+
+          p {
+            transform: translateX(0%);
+          }
+
+          .slide__actions {
+            transform: translateX(0%);
+          }
+        }
+      }
+
       .slide__content {
         position: absolute;
-        bottom: 1rem;
+        bottom: 0;
         left: 7.5%;
         @include flex(column, space-between, flex-start);
         width: 50%;
@@ -61,22 +84,29 @@
         opacity: 1;
         padding: 4rem 1rem;
         padding-bottom: 3rem;
+        z-index: 4;
 
         h1 {
           font: 6rem "Roboto Black", sans-serif;
           color: $white;
           line-height: 1;
           width: 50%;
+          transform: translateX(-250vw);
+          transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
         }
 
         h2 {
           font: 1.3rem "Roboto Light", sans-serif;
           color: $light-gray;
+          transform: translateX(-50vw);
+          transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
         }
 
         p {
           font: 0.85rem "Roboto Light", sans-serif;
           color: $light-gray;
+          transform: translateX(-500vw);
+          transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
         }
 
         .slide__description {
@@ -91,43 +121,93 @@
           width: 100%;
           @include flex(row, flex-start, center);
           gap: 1rem;
+          transform: translateX(-500vw);
+          transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+        }
+      }
+    }
+
+    .control__butons {
+      @include flex(row, flex-start, center);
+      position: absolute;
+      bottom: 0.1rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      gap: 1rem;
+      z-index: 5;
+      width: 100vw;
+      background-color: $secondary;
+      height: 8vh;
+      border: none !important;
+      gap: 3rem;
+      padding-left: 8.5vw;
+
+      button {
+        @include flex(row, flex-start, center);
+        gap: 0.5rem;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1rem;
+        opacity: 0.6;
+        gap: 1rem;
+
+        &.active {
+          opacity: 1;
+        }
+
+        .index {
+          font: 1.1rem "Roboto SemiBold", sans-serif;
+          color: $white;
+          aspect-ratio: 1;
+          letter-spacing: 1px;
+          border: 1px solid $white;
+          padding: 0.5rem;
+          border-radius: 50%;
+        }
+
+        .title {
+          font: 0.9rem "Roboto SemiBold", sans-serif;
+          color: $white;
         }
       }
     }
   }
 
   .about-us {
-    @include flex(row, flex-end, center);
+    @include flex(row, center, center);
     height: 70vh;
     width: 100%;
     padding: 0 0%;
     z-index: 10000;
+    margin: 20vh 0;
+    padding: 0 7.5%;
+    gap: 3%;
 
     .content {
       @include flex(column, center, flex-start);
       width: 50%;
-      background-color: $secondary-dark;
       z-index: 2;
       padding: 2rem;
-      padding-left: 7.5vw;
       height: 100%;
 
-      h2 {
-        font: 1.5rem "Roboto Light", sans-serif;
+      span {
+        font: 1.5rem "Roboto Regular", sans-serif;
         color: $primary;
-        margin-bottom: 0.5rem;
       }
 
       h1 {
         font: 2.5rem "Roboto SemiBold", sans-serif;
         margin-bottom: 1rem;
-        color: $white;
+        color: $black;
         text-transform: uppercase;
+        margin-top: 0.5rem;
       }
 
       p {
-        font: 0.9rem "Roboto Light", sans-serif;
-        color: $white;
+        font: 0.9rem "Roboto Regular", sans-serif;
+        color: $black;
         margin-bottom: 1.5rem;
         max-width: 90%;
       }
@@ -157,13 +237,13 @@
 
             h3 {
               font: 1rem "Roboto Bold", sans-serif;
-              color: $white;
+              color: $black;
             }
 
             p {
-              font: 0.9rem "Roboto Light", sans-serif;
+              font: 0.9rem "Roboto Regular", sans-serif;
               line-height: 1.5;
-              color: $white;
+              color: $black;
               max-width: 100%;
             }
           }
@@ -173,7 +253,7 @@
 
     .image {
       height: 100%;
-      width: 50%;
+      width: 45%;
       position: relative;
 
       img {
@@ -185,26 +265,34 @@
 
       .hero__numbers {
         position: absolute;
-        @include flex(row, flex-start, center);
-        right: 7.5vw;
-        top: 0%;
+        @include flex(row, center, center);
+        left: 0;
+        bottom: 0%;
         z-index: 2;
-        transform: translate(0%, -50%);
-        background-color: rgba($color: $primary, $alpha: 0.9);
-
+        transform: translate(-25%, 50%);
+        background-color: rgba($color: $primary, $alpha: 1);
+        width: 14rem;
+        aspect-ratio: 1;
         .item {
           @include flex(column, center, center);
           width: 8vw;
+          aspect-ratio: 1;
           padding: 1rem 0;
 
+          img {
+            object-fit: contain;
+            height: 60%;
+          }
+
           .number {
-            font: 2rem "Roboto Regular", sans-serif;
+            font: 3rem "Roboto SemiBold", sans-serif;
             color: $white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
+            letter-spacing: 1px;
           }
 
           p {
-            font: 0.8rem "Roboto Light", sans-serif;
+            font: 0.9rem "Roboto Regular", sans-serif;
             color: $white;
           }
         }

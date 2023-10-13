@@ -11,7 +11,7 @@
 
   .box-container {
     width: 100%;
-    padding: 3vh 12.5%;
+    padding: 3vh 7.5%;
     @include flex(row, flex-start, flex-start);
     flex-wrap: wrap;
     padding-bottom: 5vh;
@@ -98,7 +98,7 @@
 
   .rights {
     width: 100%;
-    padding: 0 12.5%;
+    padding: 0 7.5%;
     background-color: $secondary;
     @include flex(column, center, center);
     gap: 0.5rem;
