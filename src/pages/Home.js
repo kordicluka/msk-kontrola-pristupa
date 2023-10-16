@@ -18,6 +18,7 @@ const Home = () => {
   const [selectedProjectType, setSelectedProjectType] =
     useState("Svi projekti");
   const { projects, setProjects } = React.useContext(Context);
+  const [deviceIndex, setDeviceIndex] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -195,8 +196,23 @@ const Home = () => {
           </p>
           <div className="list">
             <div className="item">
-              <div className="rectangle"></div>
-              <div className="container">
+              <div className="rectangle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                  />
+                </svg>
+              </div>
+              <div className="list__container">
                 <h3>OLAKŠAN ULAZ U ZGRADU</h3>
                 <p>
                   Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
@@ -206,8 +222,23 @@ const Home = () => {
               </div>
             </div>
             <div className="item">
-              <div className="rectangle"></div>
-              <div className="container">
+              <div className="rectangle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                  />
+                </svg>
+              </div>
+              <div className="list__container">
                 <h3>PRODULJENJE VIJEKA TRAJANJA ULAZNIH VRATI</h3>
                 <p>
                   Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
@@ -221,41 +252,115 @@ const Home = () => {
       </div>
 
       <div className="contact">
-        <img src={contactImage} alt="" />
+        <img src={heroSlideImageFirst} alt="" />
+        <form className="form">
+          <h1>Kontaktirajte nas</h1>
 
-        <div className="content">
-          <div className="subtitle">
-            <hr />
-            <h1>Kontaktirajte nas</h1>
+          <div className="row">
+            <input type="text" placeholder="Ime i prezime *" />
+            <input type="text" placeholder="E-mail adresa *" />
           </div>
-          <p>Možete nas kontakirati na više načina:</p>
 
-          <ul>
-            <li>Pozivom na broj telefona: 091 - 734 / 4974</li>
-            <li>Putem e-maila: info@msk.hr</li>
-            <li>Ispunjavanjem forme klikom na link ispod.</li>
-          </ul>
+          <div className="row">
+            <input type="text" placeholder="Broj telefona *" />
+            <input type="text" placeholder="Adresa" />
+          </div>
 
-          <Link className="btn" to="/kontaktiraj-nas">
-            {" "}
-            KONTAKTIRAJTE NAS{" "}
-          </Link>
+          <textarea placeholder="Poruka *"></textarea>
+
+          <button className="btn">Pošalji</button>
+          <p>
+            * Obavezna polja. Vaši podaci su sigurni i neće biti dijeljeni s
+            trećim stranama.
+          </p>
+        </form>{" "}
+        <div className="info">
+          <h1>Informacije</h1>
+          <div className="item">
+            <div className="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={0.8}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                />
+              </svg>
+            </div>
+            <h2>
+              <h2>+385 91 123 4567</h2>
+            </h2>
+          </div>
+          <div className="item">
+            <div className="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={0.8}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                />
+              </svg>
+            </div>
+            <h2>
+              <h2>+385 91 123 4567</h2>
+            </h2>
+          </div>
+          <div className="item">
+            <div className="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={0.8}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                />
+              </svg>
+            </div>
+            <h2>
+              <h2>+385 91 123 4567</h2>
+            </h2>
+          </div>
         </div>
       </div>
 
       <div className="making-steps">
         <div className="images">
-          <img src={templateImage} alt="" />
-          <img src={templateImage} alt="" />
-          <img src={templateImage} alt="" />
+          <img src={heroSlideImageFirst} alt="" />
+          <img src={heroSlideImageSecond} alt="" />
+          <img src={heroSlideImageThird} alt="" />
           <img src={templateImage} alt="" />
         </div>
 
         <div className="content">
-          <div className="subtitle">
-            <hr />
-            <h2>Postupak postavljanja</h2>
-          </div>
+          <Typewriter
+            options={{
+              strings: [
+                "Saznajte više o nama",
+                "Pogledajte zašto izabrati nas?",
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />
           <h1> Kako postavljamo sustave za kontrolu pristupa?</h1>
           <p>
             Vaša firma se ističe u industriji kontrole pristupa u zgradama,
@@ -341,20 +446,36 @@ const Home = () => {
               PIN-ove za brz i pouzdan ulaz u objekte
             </p>
 
-            <Link className="btn" to="/kontaktiraj-nas">
-              naši uredaji
+            <Link className="link" to="/kontaktiraj-nas">
+              Pogledaj više
             </Link>
           </div>
-          <div className="images">
-            <img src={templateImage} alt="" />
-            <img src={templateImage} alt="" />
-            <img src={templateImage} alt="" />
-            <img src={templateImage} alt="" />
+          <div className="image">
+            <img
+              src={heroSlideImageFirst}
+              alt=""
+              className={deviceIndex === 1 ? "active" : ""}
+            />
+            <img
+              className={deviceIndex === 2 ? "active" : ""}
+              src={heroSlideImageSecond}
+              alt=""
+            />
+            <img
+              className={deviceIndex === 3 ? "active" : ""}
+              src={heroSlideImageThird}
+              alt=""
+            />
+            <img
+              className={deviceIndex === 4 ? "active" : ""}
+              src={templateImage}
+              alt=""
+            />
           </div>
         </div>
         <div className="col-2">
           <div className="image">
-            <img src={heroSlideImageFirst} alt="" />
+            <img src={heroSlideImageFirst} className="active" alt="" />
           </div>
           <div className="content">
             <h1>Narukvice, ogrlice, kartice</h1>
@@ -368,8 +489,11 @@ const Home = () => {
             </p>
 
             <div className="list">
-              <div className="item">
-                <div className="rectangle"></div>
+              <div
+                className={deviceIndex === 1 ? "item active" : "item"}
+                onMouseEnter={() => setDeviceIndex(1)}
+              >
+                <div className="index">01</div>
                 <div className="container">
                   <h3>OGRLICE</h3>
                   <p>
@@ -377,10 +501,16 @@ const Home = () => {
                     Jednostavnim prislonom kartice, malog privjeska prema čitaču
                     i otvaraju se ulazna vrata.
                   </p>
+                  <Link className="link" to="/kontaktiraj-nas">
+                    Pogledaj više
+                  </Link>
                 </div>
               </div>
-              <div className="item">
-                <div className="rectangle"></div>
+              <div
+                className={deviceIndex === 2 ? "item active" : "item"}
+                onMouseEnter={() => setDeviceIndex(2)}
+              >
+                <div className="index">02</div>
                 <div className="container">
                   <h3>NARUKVICE</h3>
                   <p>
@@ -388,10 +518,16 @@ const Home = () => {
                     Jednostavnim prislonom kartice, malog privjeska prema čitaču
                     i otvaraju se ulazna vrata.
                   </p>
+                  <Link className="link" to="/kontaktiraj-nas">
+                    Pogledaj više
+                  </Link>
                 </div>
               </div>
-              <div className="item">
-                <div className="rectangle"></div>
+              <div
+                className={deviceIndex === 3 ? "item active" : "item"}
+                onMouseEnter={() => setDeviceIndex(3)}
+              >
+                <div className="index">03</div>
                 <div className="container">
                   <h3>ULAZ SA PINOM</h3>
                   <p>
@@ -399,10 +535,16 @@ const Home = () => {
                     Jednostavnim prislonom kartice, malog privjeska prema čitaču
                     i otvaraju se ulazna vrata.
                   </p>
+                  <Link className="link" to="/kontaktiraj-nas">
+                    Pogledaj više
+                  </Link>
                 </div>
               </div>
-              <div className="item">
-                <div className="rectangle "></div>
+              <div
+                className={deviceIndex === 4 ? "item active" : "item"}
+                onMouseEnter={() => setDeviceIndex(4)}
+              >
+                <div className="index">04</div>
                 <div className="container">
                   <h3>KARTICE</h3>
                   <p>
@@ -410,13 +552,12 @@ const Home = () => {
                     Jednostavnim prislonom kartice, malog privjeska prema čitaču
                     i otvaraju se ulazna vrata.
                   </p>
+                  <Link className="link" to="/kontaktiraj-nas">
+                    Pogledaj više
+                  </Link>
                 </div>
               </div>
             </div>
-
-            <Link className="btn" to="/kontaktiraj-nas">
-              naši uredaji
-            </Link>
           </div>
         </div>
       </div>

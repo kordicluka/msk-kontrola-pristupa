@@ -6,12 +6,12 @@
   @include flex(column, center, center);
   width: 100%;
   position: relative;
-  background-color: $secondary-dark;
+  background-color: $black;
   margin-top: 10vh;
 
   .box-container {
     width: 100%;
-    padding: 3vh 7.5%;
+    padding: 3vh 12.5%;
     @include flex(row, flex-start, flex-start);
     flex-wrap: wrap;
     padding-bottom: 5vh;
@@ -98,8 +98,8 @@
 
   .rights {
     width: 100%;
-    padding: 0 7.5%;
-    background-color: $secondary;
+    padding: 0 1rem;
+    background-color: $dark-gray;
     @include flex(column, center, center);
     gap: 0.5rem;
 
