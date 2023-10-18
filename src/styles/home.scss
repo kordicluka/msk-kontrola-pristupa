@@ -246,6 +246,7 @@
           gap: 1rem;
           background-color: rgba($color: #ffffff, $alpha: 1);
           transform: translateY(-5vh);
+          position: relative;
         }
 
         h2 {
@@ -264,6 +265,10 @@
 
         .outside__btn {
           margin-top: 0.7rem;
+          position: absolute;
+          bottom: -0.5rem;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
