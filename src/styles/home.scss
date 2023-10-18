@@ -829,10 +829,6 @@
         @include flex(column, flex-start, center);
         width: 100%;
 
-        &:nth-child(2) {
-          flex-direction: column-reverse;
-        }
-
         .image {
           width: 100%;
           height: 70%;
