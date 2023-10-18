@@ -80,7 +80,7 @@ function App() {
       slug: "projekt-6",
       title: "Projekt 6",
       shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristn i jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+        "Vaša firma se ističevan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
       image: templateImage,
       address: "Adresa projekta 1",
