@@ -852,7 +852,7 @@
           color: $primary;
         }
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 1000px) {
           font: 28px "Roboto Black", sans-serif;
           text-align: center;
           max-width: 100%;
@@ -866,7 +866,7 @@
         max-width: 100%;
         line-height: 1.6;
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 1000px) {
           font: 12px "Roboto Regular", sans-serif;
           text-align: center;
           max-width: 100%;
@@ -880,7 +880,7 @@
       gap: 1rem;
       overflow: hidden;
 
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 1000px) {
         @include flex(column, center, center);
         gap: 1rem;
       }
@@ -895,7 +895,7 @@
           height: 70%;
           position: relative;
 
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: 1000px) {
             height: 60%;
           }
 
