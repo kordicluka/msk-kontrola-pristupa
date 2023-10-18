@@ -8,6 +8,9 @@ import Devices from "./pages/Devices";
 import ContactUs from "./pages/ContactUs";
 import Projects from "./pages/Projects";
 import templateImage from "./assets/images/template-image.jpg";
+import projectImageFirst from "./assets/images/project-1.jpg";
+import projectImageSecond from "./assets/images/project-2.jpg";
+import projectImageThird from "./assets/images/project-3.jpg";
 import logo from "./assets/images/logo192.png";
 
 export const Context = React.createContext();
@@ -17,10 +20,9 @@ function App() {
     {
       slug: "projekt-1",
       title: "Projekt 1",
-      shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+      shortDescription: "Vaša firma se ističe u industriji kontrole prisazak. ",
       description: "Opis projekta 1",
-      image: templateImage,
+      image: projectImageFirst,
       address: "Adresa projekta 1",
       year: "2021",
       content: "Sadržaj projekta 1",
@@ -30,9 +32,9 @@ function App() {
       slug: "projekt-2",
       title: "Projekt 2",
       shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+        "Vaša firma se ističe u industriji ki jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
-      image: templateImage,
+      image: projectImageSecond,
       address: "Adresa projekta 1",
       year: "2021",
       content: "Sadržaj projekta 1",
@@ -42,9 +44,9 @@ function App() {
       slug: "projekt-3",
       title: "Projekt 3",
       shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+        "Vaša firma se ističe u industriji k i jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
-      image: templateImage,
+      image: projectImageThird,
       address: "Adresa projekta 1",
       year: "2021",
       content: "Sadržaj projekta 1",
@@ -54,7 +56,7 @@ function App() {
       slug: "projekt-4",
       title: "Projekt 4",
       shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+        "Vaša firma se ističe u i inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
       image: templateImage,
       address: "Adresa projekta 1",
@@ -66,7 +68,7 @@ function App() {
       slug: "projekt-5",
       title: "Projekt 5",
       shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući ",
       description: "Opis projekta 1",
       image: templateImage,
       address: "Adresa projekta 1",
@@ -78,7 +80,7 @@ function App() {
       slug: "projekt-6",
       title: "Projekt 6",
       shortDescription:
-        "Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+        "Vaša firma se ističe u industriji kontrole pristn i jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
       image: templateImage,
       address: "Adresa projekta 1",

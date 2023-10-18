@@ -1,92 +1,127 @@
 @import "../App.scss";
 
-.header {
+.top__header {
+  @include flex(row, space-between, center);
+  background-color: $secondary;
+  gap: 1rem;
   width: 100%;
-  height: calc(10vh + 4vh);
-  @include flex(column, flex-start, flex-start);
-  z-index: 3;
-  position: static;
-  background: transparent;
+  height: 4vh;
+  position: sticky;
   top: 0;
-  z-index: 1000000000000;
+  z-index: 100000000000;
+  padding: 0 12.5%;
 
-  .top__header {
+  .contact {
     @include flex(row, center, center);
-    background-color: $black;
     gap: 1rem;
-    width: 100%;
     height: 4vh;
 
-    .contact {
-      width: 40%;
+    div {
+      font: 1rem "Roboto Light", sans-serif;
+      color: $white;
       @include flex(row, center, center);
       gap: 1rem;
-      height: 4vh;
-      background-color: $black;
+      border-right: 1px solid #ffffff23;
+      height: 100%;
+      padding: 0 1rem;
 
-      div {
-        font: 1rem "Roboto Regular", sans-serif;
-        color: $white;
-        @include flex(row, center, center);
-        gap: 0.5rem;
+      &:last-child {
+        border-right: none;
+      }
 
-        svg {
-          height: 100%;
-          width: 2.5vh;
-        }
+      &:first-child {
+        padding-left: 0;
+      }
 
-        span {
-          font: 0.9rem "Roboto Regular", sans-serif;
-          text-transform: uppercase;
-        }
+      svg {
+        height: 100%;
+        width: 1.8vh;
+      }
+
+      span {
+        font: 0.8rem "Roboto Light", sans-serif;
       }
     }
   }
 
-  .navbar {
-    width: 100%;
-    height: 10vh;
-    position: relative;
-    @include flex(row, space-between, center);
-    padding: 0 12.5%;
-    z-index: 1;
-    background: transparent;
-    gap: 2rem;
-    .navbar__left {
-      padding: 0.3rem 0;
+  .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4vh;
+    @include flex(row, center, center);
+
+    span {
+      font: 0.8rem "Roboto Light", sans-serif;
+      color: $white;
+    }
+  }
+
+  .socials {
+    @include flex(row, center, center);
+    gap: 0.5rem;
+
+    img {
+      height: 3vh;
+      width: 3vh;
+      cursor: pointer;
+    }
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 7vh;
+  position: relative;
+  @include flex(row, space-between, center);
+  padding: 0 12.5%;
+  z-index: 1;
+  background: rgba($color: $white, $alpha: 1);
+  gap: 2rem;
+  position: sticky;
+  top: 4vh;
+  z-index: 100000000000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $gray;
+
+  .navbar__left {
+    padding: 0.3rem 0;
+    height: 100%;
+    padding: 0.45rem;
+    z-index: 3;
+    .logo {
       height: 100%;
-      padding: 0.45rem;
-      .logo {
+      width: 100%;
+      cursor: pointer;
+
+      img {
         height: 100%;
         width: 100%;
-        cursor: pointer;
-
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: contain;
-        }
+        object-fit: contain;
       }
     }
+  }
 
-    .navbar__center {
+  .navbar__center {
+    @include flex(row, center, center);
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a {
+      text-decoration: none;
+      color: $black;
+      font: 0.93rem "Roboto Regular", sans-serif;
       @include flex(row, center, center);
       height: 100%;
-      gap: 1.5rem;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      padding: 0 1rem;
+      transition: all 0.2s ease-in-out;
+      border-bottom: 3px solid transparent;
 
-      a {
-        text-decoration: none;
-        color: $white;
-        font: 0.8rem "Roboto Regular", sans-serif;
-        @include flex(row, center, center);
-        text-transform: uppercase;
-
-        &:hover {
-          color: $primary;
-        }
+      &.active,
+      &:hover {
+        border-bottom: 3px solid $primary;
       }
     }
   }

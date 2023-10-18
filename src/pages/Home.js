@@ -12,6 +12,14 @@ import "../styles/home.scss";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import ProgressionCircle from "../components/ProgressionCircle";
+import mapImage from "../assets/images/map.png";
+import facebook_logo from "../assets/images/socials/facebook_logo.png";
+import instagram_logo from "../assets/images/socials/instagram_logo.png";
+import twitter_logo from "../assets/images/socials/twitter_logo.png";
+import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
+import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
+import logo from "../assets/images/logo.png";
+
 const Home = () => {
   const [count, setCount] = useState(0);
   const [projectsTypes, setProjectsTypes] = useState(["Svi projekti"]);
@@ -36,28 +44,30 @@ const Home = () => {
 
   const heroSlides = [
     {
-      title: "KONTROLA PRISTUPA",
-      subtitle: "Kvaliteta i sigurnost",
+      title: "Kontrola pristupa za vašu zgradu",
+      subtitle: "Osigurajte svaki ulaz u zgradu",
       image: contactImage,
       description: (
         <>
-          <p>Zgrade, Stanovi i ostalo</p>
           <p>
-            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-            pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
+            Produljite trajanje vaših ulaznih vrata korištenjem naše
+            tehnologije.
+          </p>
+          <p>
+            Osigurajte svaki ulaz u zgradu, stan ili poslovni prostor. Naša
             tehnologija se temelji na sigurnim sebury uređajima, omogućujući
             stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
-            brz i pouzdan ulaz u objekte
+            brz i pouzdan ulaz u objekte.
           </p>
         </>
       ),
       actions: (
         <>
           <Link className="btn" to="/kontaktiraj-nas">
-            naši uredaji
+            Saznajte više
           </Link>
           <Link className="link" to="/kontaktiraj-nas">
-            Saznajte više
+            Idi na stranicu
           </Link>
         </>
       ),
@@ -65,26 +75,23 @@ const Home = () => {
     {
       title: "DRUGI SLIDE",
       subtitle: "Kvaliteta i sigurnost",
-      image: heroSlideImageSecond,
+      image: contactImage,
       description: (
         <>
           <p>Zgrade, Stanovi i ostalo</p>
           <p>
             Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-            pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
-            tehnologija se temelji na sigurnim sebury uređajima, omogućujući
-            stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
-            brz i pouzdan ulaz u objekte
+            pružajući .
           </p>
         </>
       ),
       actions: (
         <>
           <Link className="btn" to="/kontaktiraj-nas">
-            naši uredaji
+            Saznajte više
           </Link>
           <Link className="link" to="/kontaktiraj-nas">
-            Saznajte više
+            Idi na stranicu
           </Link>
         </>
       ),
@@ -93,7 +100,7 @@ const Home = () => {
     {
       title: "ELEKTRONSKI KONTROLERI",
       subtitle: "Kvaliteta i sigurnost",
-      image: heroSlideImageThird,
+      image: contactImage,
       description: (
         <>
           <p>Koristimo sebury uređaje</p>
@@ -109,10 +116,10 @@ const Home = () => {
       actions: (
         <>
           <Link className="btn" to="/kontaktiraj-nas">
-            naši uredaji
+            Saznajte više
           </Link>
           <Link className="link" to="/kontaktiraj-nas">
-            Saznajte više
+            Idi na stranicu
           </Link>
         </>
       ),
@@ -132,61 +139,135 @@ const Home = () => {
             </div>
 
             <div className="slide__content">
-              <div className="top">
-                <h2>{slide.subtitle}</h2>
-                <h1>{slide.title}</h1>
-                <div className="slide__description">{slide.description}</div>
-              </div>
+              <h2>{slide.subtitle}</h2>
+              <h1>{slide.title}</h1>
+              <div className="slide__description">{slide.description}</div>
               <div className="slide__actions">{slide.actions}</div>
             </div>
           </div>
         ))}
 
-        <div className="control__butons">
-          {heroSlides.map((slide, index) => (
-            <button
-              className={count === index ? "active" : ""}
-              onClick={() => setCount(index)}
-              key={index}
-            >
-              <span className="index">
-                {index + 1 < 10 ? `0${index + 1}` : index + 1}
-              </span>
-              <span className="title">{slide.title}</span>
-            </button>
-          ))}
+        <button
+          className="slider__button"
+          onClick={() =>
+            setCount((count - 1 + heroSlides.length) % heroSlides.length)
+          }
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+
+        <button
+          className="slider__button right"
+          onClick={() =>
+            setCount((count - 1 + heroSlides.length) % heroSlides.length)
+          }
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+
+        <div className="service">
+          <h2>Trebate pomoć oko kontrole pristupa?</h2>
+          <p>
+            Skrolajte dolje te istražite naše usluge. Ukoliko imate bilo kakvih
+            pitanja, slobodno nas kontaktirajte.
+          </p>
         </div>
       </div>
 
-      <div className="about-us">
-        <div className="image">
-          <img src={heroSlideImageFirst} alt="" />
-          <div className="hero__numbers">
-            <div className="item">
-              <img src={projectIcon} alt="" />
-              <p className="number">25+</p>
-              <p className="text"> Završenih projekata</p>{" "}
+      <div className="services">
+        <h1>
+          {" "}
+          <span>Usluge</span> koje nudimo
+        </h1>
+
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s psum has been tstandard dummy text ever since the 1500s
+        </p>
+
+        <div className="services__container">
+          <div className="service">
+            <div className="image">
+              <img src={heroSlideImageFirst} alt="" />
+            </div>
+            <div className="content">
+              <h2>Ulazi u zgrade</h2>
+              <p>
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the
+              </p>
+
+              <Link className="outside__btn" to="/kontaktiraj-nas">
+                Saznajte više
+              </Link>
             </div>
           </div>
-
-          <div className="circle__container">
-            <ProgressionCircle value={99} text={"Zadovoljni klijenti"} />
-            <h4 className="circle__text">ZADOVOLJNI KLIJENTI</h4>
+          <div className="service">
+            <div className="image">
+              <img src={heroSlideImageSecond} alt="" />
+            </div>{" "}
+            <div className="content">
+              <h2>Zaštita prostorija</h2>
+              <p>
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s psum has been tstandard dummy text ever since
+                the 1500s
+              </p>
+              <Link className="outside__btn" to="/kontaktiraj-nas">
+                Saznajte više
+              </Link>
+            </div>
+          </div>
+          <div className="service">
+            <div className="image">
+              <img src={heroSlideImageThird} alt="" />
+            </div>
+            <div className="content">
+              <h2>Elektronski kontroleri</h2>
+              <p>
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s psum has been tstandard dummy text ever since
+                the 1500s
+              </p>
+              <Link className="outside__btn" to="/kontaktiraj-nas">
+                Saznajte više
+              </Link>
+            </div>
           </div>
         </div>
-
+      </div>
+      <div className="about-us">
         <div className="content">
-          <Typewriter
-            options={{
-              strings: [
-                "Saznajte više o nama",
-                "Pogledajte zašto izabrati nas?",
-              ],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-          <h1>O nama</h1>
+          {" "}
+          <h1>
+            <span>O</span> nama
+          </h1>
           <p>
             Vaša firma se ističe u industriji kontrole pristupa u zgradama,
             pružajući inovativna rješenja za siguran i jednostavan ulazak. Naša
@@ -194,241 +275,20 @@ const Home = () => {
             stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
             brz i pouzdan ulaz u objekte
           </p>
-          <div className="list">
-            <div className="item">
-              <div className="rectangle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
-                  />
-                </svg>
-              </div>
-              <div className="list__container">
-                <h3>OLAKŠAN ULAZ U ZGRADU</h3>
-                <p>
-                  Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
-                  Jednostavnim prislonom kartice, malog privjeska prema čitaču i
-                  otvaraju se ulazna vrata.
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="rectangle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
-                  />
-                </svg>
-              </div>
-              <div className="list__container">
-                <h3>PRODULJENJE VIJEKA TRAJANJA ULAZNIH VRATI</h3>
-                <p>
-                  Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
-                  Jednostavnim prislonom kartice, malog privjeska prema čitaču i
-                  otvaraju se ulazna vrata.
-                </p>
-              </div>
-            </div>
+          <div className="circle__container">
+            <ProgressionCircle value={99} text={"Zadovoljni klijenti"} />
+            <h4 className="circle__text">ZADOVOLJNI KLIJENTI</h4>
           </div>
+          <Link className="outside__btn" to="/kontaktiraj-nas">
+            Saznajte više
+          </Link>
         </div>
-      </div>
-
-      <div className="contact">
-        <img src={heroSlideImageFirst} alt="" />
-        <form className="form">
-          <h1>Kontaktirajte nas</h1>
-
-          <div className="row">
-            <input type="text" placeholder="Ime i prezime *" />
-            <input type="text" placeholder="E-mail adresa *" />
-          </div>
-
-          <div className="row">
-            <input type="text" placeholder="Broj telefona *" />
-            <input type="text" placeholder="Adresa" />
-          </div>
-
-          <textarea placeholder="Poruka *"></textarea>
-
-          <button className="btn">Pošalji</button>
-          <p>
-            * Obavezna polja. Vaši podaci su sigurni i neće biti dijeljeni s
-            trećim stranama.
-          </p>
-        </form>{" "}
-        <div className="info">
-          <h1>Informacije</h1>
-          <div className="item">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={0.8}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                />
-              </svg>
-            </div>
-            <h2>
-              <h2>+385 91 123 4567</h2>
-            </h2>
-          </div>
-          <div className="item">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={0.8}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                />
-              </svg>
-            </div>
-            <h2>
-              <h2>+385 91 123 4567</h2>
-            </h2>
-          </div>
-          <div className="item">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={0.8}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                />
-              </svg>
-            </div>
-            <h2>
-              <h2>+385 91 123 4567</h2>
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="making-steps">
-        <div className="images">
+        <div className="image">
           <img src={heroSlideImageFirst} alt="" />
-          <img src={heroSlideImageSecond} alt="" />
-          <img src={heroSlideImageThird} alt="" />
-          <img src={templateImage} alt="" />
-        </div>
-
-        <div className="content">
-          <Typewriter
-            options={{
-              strings: [
-                "Saznajte više o nama",
-                "Pogledajte zašto izabrati nas?",
-              ],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-          <h1> Kako postavljamo sustave za kontrolu pristupa?</h1>
-          <p>
-            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-            pružajući inovativna rješenja za siguran i jednostavan ulazak.
-          </p>
-
-          <div className="list">
-            <div className="item">
-              <div className="index">
-                <span>01</span>
-                <div className="vertical-line"></div>
-              </div>
-              <div className="list_content">
-                <h3>KONTKAKT TE IZRADA PONUDE</h3>
-                <p>
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when a ever since the 1500s, when a Lorem
-                  Ipsum has been the industr
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="index">
-                <span>02</span>
-                <div className="vertical-line"></div>
-              </div>
-              <div className="list_content">
-                <h3>KONTKAKT TE IZRADA PONUDE</h3>
-                <p>
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when a ever since the 1500s, when a Lorem
-                  Ipsum has been the industr
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="index">
-                <span>03</span>
-                <div className="vertical-line"></div>
-              </div>
-              <div className="list_content">
-                <h3>KONTKAKT TE IZRADA PONUDE</h3>
-                <p>
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when a ever since the 1500s, when a Lorem
-                  Ipsum has been the industr
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="index">
-                <span>04</span>
-                <div className="vertical-line"></div>
-              </div>
-              <div className="list_content">
-                <h3>KONTKAKT TE IZRADA PONUDE</h3>
-                <p>
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when a ever since the 1500s, when a Lorem
-                  Ipsum has been the industr
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div className="devices">
+      <div className="devices" style={{ display: "none" }}>
         <div className="col-1">
           <div className="content">
             <h1>Elektronski kontroleri</h1>
@@ -562,23 +422,82 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="steps">
+        <div className="content">
+          <h1>Postupak postavljanja</h1>
+
+          <p>
+            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
+            pružajući inovativna rješenja za siguran i jednostavan ulazak.
+          </p>
+        </div>
+
+        <div className="list">
+          <div className="item">
+            <div className="image">
+              <img src={heroSlideImageFirst} alt="" />
+              <span className="index">01</span>
+            </div>
+
+            <div className="item__content">
+              <h3>Kontakt te izrada ponude</h3>
+              <p>
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when a ever since the 1500s, when a Lorem Ipsum
+                has been the industr
+              </p>
+              <Link className="outside__btn" to="/kontaktiraj-nas">
+                Saznajte više
+              </Link>
+            </div>
+          </div>{" "}
+          <div className="item">
+            <div className="image">
+              <img src={heroSlideImageFirst} alt="" />
+              <span className="index">01</span>
+            </div>
+
+            <div className="item__content">
+              <h3>Kontakt te izrada ponude</h3>
+              <p>
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when a ever since the 1500s, when a Lorem Ipsum
+                has been the industr
+              </p>
+              <Link className="outside__btn" to="/kontaktiraj-nas">
+                Saznajte više
+              </Link>
+            </div>
+          </div>
+          <div className="item">
+            <div className="image">
+              <img src={heroSlideImageThird} alt="" />
+              <span className="index">02</span>
+            </div>
+
+            <div className="item__content">
+              <h3>Kontakt te izrada ponude</h3>
+              <p>
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when a ever since the 1500s, when a Lorem Ipsum
+                has been the industr
+              </p>
+              <Link className="outside__btn" to="/kontaktiraj-nas">
+                Saznajte više
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="projects">
-        <h1>Izdvojeni projekti</h1>
+        <h1>
+          Izdvojeni <span>projekti</span>
+        </h1>
         <p>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s psum has been tstandard dummy text ever since the 1500s
         </p>
-        <div className="control">
-          {projectsTypes.map((type) => (
-            <button
-              className={selectedProjectType === type ? "active" : ""}
-              onClick={() => setSelectedProjectType(type)}
-              key={type}
-            >
-              {type}
-            </button>
-          ))}
-        </div>
 
         <div className="projects__container">
           {projects
@@ -593,11 +512,13 @@ const Home = () => {
                   <img src={project.image} alt="" />
                 </div>
                 <div className="content">
-                  <p className="address">{project.address}</p>
                   <h3>{project.title}</h3>
                   <p className="shortDescription">{project.shortDescription}</p>
                   <div className="actions">
-                    <Link className="btn" to={`/projekt/${project.slug}`}>
+                    <Link
+                      className="outside__btn"
+                      to={`/projekt/${project.slug}`}
+                    >
                       Saznajte više
                     </Link>
                   </div>
@@ -605,6 +526,64 @@ const Home = () => {
               </div>
             ))}
         </div>
+      </div>
+
+      <div className="contact">
+        <div className="info">
+          <h1>Informacije</h1>
+          <p>
+            <span>Adresa:</span> Ulica 1, 10000 Zagreb, Hrvatska
+          </p>
+          <img src={mapImage} alt="" />
+
+          <p>
+            Pogledajte kako sve možete stupit u kontakt s nama. Ukoliko imate
+            bilo kakvih pitanja, slobodno nas kontaktirajte.
+          </p>
+
+          <ul className="contact__info">
+            <li>
+              Telefon: 091 - 390 / 5524 <span> | </span>
+            </li>
+            <li>
+              E-mail:
+              <span>info@msk.hr</span>
+            </li>
+          </ul>
+
+          <div className="socials">
+            <img src={facebook_logo} alt="facebook_logo" />
+            <img src={instagram_logo} alt="instagram_logo" />
+            <img src={twitter_logo} alt="twitter_logo" />
+            <img src={tiktok_logo} alt="tiktok_logo" />
+            <img src={pinterest_logo} alt="pinterest_logo" />
+          </div>
+        </div>
+        <form className="form">
+          <h1>
+            Kontaktirajte nas ispunjavanjem <span>forme.</span>
+          </h1>
+
+          <p>
+            Potruditi ćemo se odgovoriti na vaš upit u najkraćem mogućem roku.
+          </p>
+
+          <div className="row">
+            <input type="text" placeholder="Ime i prezime *" />
+            <input type="text" placeholder="Broj telefona *" />
+          </div>
+
+          <input type="text" placeholder="Broj telefona *" />
+          <input type="text" placeholder="Adresa" />
+
+          <textarea placeholder="Poruka *"></textarea>
+
+          <button className="btn">Pošalji</button>
+          <p>
+            * Obavezna polja. Vaši podaci su sigurni i neće biti dijeljeni s
+            trećim stranama.
+          </p>
+        </form>{" "}
       </div>
     </div>
   );
