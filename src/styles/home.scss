@@ -510,6 +510,11 @@
     background-color: $secondary;
     height: 90vh;
 
+    @media only screen and (max-width: 1000px) {
+      height: 100%;
+      @include flex(column, center, center);
+    }
+
     .form {
       @include flex(column, center, flex-start);
       padding: 3rem 2rem;
@@ -519,6 +524,17 @@
       height: 100%;
       padding-right: 12.5%;
       gap: 1rem;
+      background-color: $light-gray;
+
+      @media only screen and (max-width: 1300px) {
+        padding-right: 5vw;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        width: 100%;
+        padding: 3rem 5%;
+        @include flex(column, center, center);
+      }
 
       h1 {
         font: 27px "Roboto SemiBold", sans-serif;
@@ -586,6 +602,16 @@
       padding-left: 12.5%;
       gap: 1.4rem;
       color: $white;
+
+      @media only screen and (max-width: 1300px) {
+        padding-left: 5vw;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        width: 100%;
+        padding: 3rem 5%;
+        @include flex(column, center, center);
+      }
 
       h1 {
         font: 30px "Roboto Regular", sans-serif;
