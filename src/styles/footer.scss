@@ -12,10 +12,23 @@
     @include flex(row, flex-start, flex-start);
     flex-wrap: wrap;
     padding-bottom: 5vh;
+
+    @media (max-width: 1600px) {
+      padding: 3vh 5%;
+    }
+
     .box {
       @include flex(column, flex-start, flex-start);
       margin: 1rem 0;
       width: calc(100% / 5);
+
+      @media (max-width: 1400px) {
+        width: 50%;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       &.first {
         width: calc((100% / 5) * 2);
@@ -23,6 +36,10 @@
           height: 13vh;
           width: 70%;
           object-fit: contain;
+
+          @media (max-width: 768px) {
+            width: 100%;
+          }
         }
 
         p {
@@ -32,11 +49,19 @@
           color: $gray;
           width: 70%;
           text-align: left;
+
+          @media (max-width: 768px) {
+            width: 100%;
+          }
         }
 
         .socials {
           @include flex(row, flex-start, flex-start);
           gap: 1rem;
+
+          @media (max-width: 768px) {
+            width: 100%;
+          }
 
           img {
             width: 2.5rem;
@@ -61,6 +86,10 @@
         margin-bottom: 1.5rem;
         color: $white;
         text-transform: uppercase;
+
+        @media (max-width: 768px) {
+          font-size: 1.3rem;
+        }
       }
 
       ul {
@@ -72,10 +101,10 @@
 
         li {
           color: $gray;
-          font: 0.75rem "Roboto Light", sans-serif;
+          font: 11px "Roboto Light", sans-serif;
           a {
             color: $gray;
-            font: 0.75rem "Roboto Light", sans-serif;
+            font: 11px "Roboto Light", sans-serif;
             text-decoration: none;
 
             &:hover {
@@ -86,7 +115,7 @@
 
         .btn {
           color: $white;
-          font: 0.78rem "Roboto Regular", sans-serif;
+          font: 12px "Roboto Regular", sans-serif;
           margin-top: 0.5rem;
         }
       }
