@@ -603,7 +603,7 @@
             width: 100%;
 
             .index {
-              font: 1.5rem "Roboto Bold", sans-serif;
+              font: 16px "Roboto Bold", sans-serif;
               color: $black;
             }
 
@@ -617,19 +617,19 @@
                 display: none;
                 color: $black;
                 border-bottom: 1px solid $black;
-                font: 0.9rem "Roboto SemiBold", sans-serif;
+                font: 13px "Roboto SemiBold", sans-serif;
               }
 
               padding-bottom: 1.5rem;
               width: 100%;
 
               h3 {
-                font: 1.5rem "Roboto Bold", sans-serif;
+                font: 16px "Roboto Bold", sans-serif;
                 color: $black;
               }
 
               p {
-                font: 0.9rem "Roboto Regular", sans-serif;
+                font: 13px "Roboto Regular", sans-serif;
                 color: $black;
                 max-width: 100%;
                 margin: 0.5rem 0;
@@ -713,7 +713,7 @@
         border: 1px solid $gray;
         background-color: $light-gray;
         cursor: pointer;
-        font: 0.8rem "Roboto Regular", sans-serif;
+        font: 13px "Roboto Regular", sans-serif;
 
         &.active,
         &:hover {
