@@ -98,12 +98,17 @@ body {
   background-color: transparent;
   color: $black;
   border: 1px solid $black;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1.1rem;
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
   font: 14px "Roboto SemiBold", sans-serif;
   position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    padding: 0.4rem 0.9rem;
+  }
 
   &::before {
     content: "";

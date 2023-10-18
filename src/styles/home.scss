@@ -246,11 +246,21 @@
     @include flex(column, flex-start, center);
     padding: 5vh 12.5%;
 
+    @media only screen and (max-width: 1500px) {
+      padding: 5vh 5%;
+    }
+
     h1 {
       font: 35px "Roboto SemiBold", sans-serif;
       color: $dark-gray;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
+
+      @media only screen and (max-width: 1500px) {
+        font: 28px "Roboto SemiBold", sans-serif;
+        text-align: center;
+        max-width: 100%;
+      }
 
       span {
         color: $primary;
@@ -263,6 +273,11 @@
       max-width: 40%;
       text-align: center;
       line-height: 1.6;
+
+      @media only screen and (max-width: 1500px) {
+        font: 12px "Roboto Regular", sans-serif;
+        max-width: 100%;
+      }
     }
 
     .services__container {
@@ -271,10 +286,24 @@
       margin-top: 5vh;
       width: 100%;
 
+      @media only screen and (max-width: 900px) {
+        @include flex(column, center, center);
+        gap: 1rem;
+      }
+
       .service {
         width: calc(100% / 3 - 2rem);
         @include flex(column, flex-start, center);
         height: 65vh;
+
+        @media only screen and (max-width: 1500px) {
+          height: 70vh;
+        }
+
+        @media only screen and (max-width: 900px) {
+          width: 100%;
+          height: 60vh;
+        }
 
         .image {
           width: 100%;
@@ -298,6 +327,10 @@
           background-color: rgba($color: #ffffff, $alpha: 1);
           transform: translateY(-5vh);
           position: relative;
+
+          @media only screen and (max-width: 1500px) {
+            height: 35vh;
+          }
         }
 
         h2 {
@@ -320,6 +353,10 @@
           bottom: 1rem;
           left: 50%;
           transform: translateX(-50%);
+
+          @media only screen and (max-width: 1300px) {
+            bottom: 0;
+          }
         }
       }
     }
@@ -332,6 +369,17 @@
     padding: 0 12.5%;
     height: 60vh;
     position: relative;
+
+    @media only screen and (max-width: 1300px) {
+      height: 100%;
+      padding: 0 5%;
+    }
+
+    @media only screen and (max-width: 768px) {
+      height: 100%;
+      padding: 0 5%;
+      flex-direction: column-reverse;
+    }
 
     &::before {
       content: "";
@@ -350,8 +398,14 @@
       width: 50%;
       transform: translateX(5%);
       padding: 2rem 3rem;
-      position: relative;
       box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
+
+      @media only screen and (max-width: 1300px) {
+        width: 100%;
+        padding: 2rem 1rem;
+        transform: translateX(0%);
+        box-shadow: none;
+      }
 
       .circle__container {
         position: absolute;
@@ -365,9 +419,28 @@
         gap: 1rem;
         box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
 
+        @media only screen and (max-width: 1300px) {
+          bottom: 0;
+          transform: translateX(8%) translateY(50%);
+        }
+
+        .circle {
+          width: 6rem;
+
+          @media only screen and (max-width: 1300px) {
+            width: 4rem;
+            height: 4rem;
+          }
+        }
+
         h4 {
           font: 13px "Roboto Bold", sans-serif;
           color: $black;
+
+          @media only screen and (max-width: 1300px) {
+            font: 12px "Roboto Bold", sans-serif;
+            text-align: center;
+          }
         }
       }
 
@@ -377,16 +450,15 @@
         margin-bottom: 2rem;
         text-transform: uppercase;
 
+        @media only screen and (max-width: 1300px) {
+          font: 25px "Roboto SemiBold", sans-serif;
+          text-align: center;
+          width: 100%;
+        }
+
         span {
           color: $primary;
         }
-      }
-
-      .logo {
-        width: 4rem;
-        position: absolute;
-        right: 12.5vw;
-        top: 1rem;
       }
 
       p {
@@ -395,6 +467,12 @@
         margin-bottom: 3rem;
         max-width: 90%;
         line-height: 1.6;
+
+        @media only screen and (max-width: 1300px) {
+          font: 11px "Roboto Regular", sans-serif;
+          text-align: center;
+          max-width: 100%;
+        }
       }
 
       .link {
@@ -404,53 +482,6 @@
         border-bottom: 1px solid $primary;
         transition: all 0.3s ease-in-out;
       }
-
-      .list {
-        @include flex(column, flex-start, flex-start);
-        gap: 1rem;
-        padding: 2rem 0;
-        width: 100%;
-
-        .item {
-          @include flex(row, center, center);
-          gap: 2rem;
-          width: 100%;
-          border-bottom: 1px solid #00000020;
-          padding-bottom: 1.5rem;
-
-          .rectangle {
-            aspect-ratio: 1;
-            height: 6vh;
-            background-color: $primary;
-            padding: 0.5rem;
-
-            svg {
-              height: 100%;
-              width: 100%;
-              color: $white;
-            }
-          }
-
-          .list__container {
-            @include flex(column, flex-start, flex-start);
-            gap: 0.3rem;
-            margin: 0;
-            padding: 0;
-
-            h3 {
-              font: 17px "Roboto Black", sans-serif;
-              color: $black;
-            }
-
-            p {
-              font: 13px "Roboto Regular", sans-serif;
-              color: $black;
-              max-width: 100%;
-              margin: 0;
-            }
-          }
-        }
-      }
     }
 
     .image {
@@ -458,6 +489,12 @@
       padding: 0;
       width: 50%;
       position: relative;
+      overflow: hidden;
+
+      @media only screen and (max-width: 1300px) {
+        width: 100%;
+        height: 100%;
+      }
 
       img {
         width: 100%;
@@ -738,6 +775,11 @@
     margin-bottom: 5vh;
     margin-top: 10vh;
 
+    @media only screen and (max-width: 1300px) {
+      padding: 0 5%;
+      padding-bottom: 67vh;
+    }
+
     h1 {
       font: 35px "Roboto SemiBold", sans-serif;
       color: $dark-gray;
@@ -760,9 +802,13 @@
   .controllers__type {
     width: 100%;
     padding: 10vh 12.5%;
-    @include flex(column, flex-end, center);
+    @include flex(column, center, center);
     position: relative;
     gap: 1rem;
+
+    @media only screen and (max-width: 1300px) {
+      padding: 5vh 5%;
+    }
 
     .content {
       @include flex(column, center, center);
@@ -779,6 +825,12 @@
         span {
           color: $primary;
         }
+
+        @media only screen and (max-width: 768px) {
+          font: 28px "Roboto Black", sans-serif;
+          text-align: center;
+          max-width: 100%;
+        }
       }
 
       p {
@@ -787,6 +839,12 @@
         margin-bottom: 0.5rem;
         max-width: 100%;
         line-height: 1.6;
+
+        @media only screen and (max-width: 768px) {
+          font: 12px "Roboto Regular", sans-serif;
+          text-align: center;
+          max-width: 100%;
+        }
       }
     }
 
@@ -795,6 +853,11 @@
       @include flex(row, flex-start, flex-start);
       gap: 1rem;
       overflow: hidden;
+
+      @media only screen and (max-width: 768px) {
+        @include flex(column, center, center);
+        gap: 1rem;
+      }
 
       .item {
         height: 73vh;
@@ -805,6 +868,10 @@
           width: 100%;
           height: 70%;
           position: relative;
+
+          @media only screen and (max-width: 768px) {
+            height: 60%;
+          }
 
           img {
             width: 100%;
@@ -823,6 +890,10 @@
             background-color: rgba($color: $primary, $alpha: 0.9);
             color: $white;
             font: 20px "Roboto Bold", sans-serif;
+
+            @media only screen and (max-width: 1300px) {
+              font: 15px "Roboto Bold", sans-serif;
+            }
           }
         }
 
@@ -833,6 +904,10 @@
           height: 30%;
           background-color: $secondary;
           padding: 2rem 2rem;
+
+          @media only screen and (max-width: 1300px) {
+            padding: 2rem 1rem;
+          }
 
           h3 {
             font: 20px "Roboto SemiBold", sans-serif;
@@ -860,6 +935,10 @@
     width: 100%;
     padding: 5vh 12.5%;
     @include flex(column, center, center);
+
+    @media only screen and (max-width: 1300px) {
+      padding: 5vh 2rem;
+    }
 
     .content {
       width: 100%;

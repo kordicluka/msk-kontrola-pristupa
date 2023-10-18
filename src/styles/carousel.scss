@@ -10,8 +10,11 @@
   @include flex(row, space-between, center);
   z-index: 999;
 
-  @media (max-width: 768px) {
-    width: 100%;
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+    bottom: 35vh;
+    left: 10%;
+    transform: translate(0, 0);
   }
 
   .carousel__button {
@@ -72,6 +75,12 @@
       height: 65vh;
       @include flex(column, flex-start, flex-start);
       padding: 0 1rem;
+
+      @media (max-width: 768px) {
+        width: 70vw;
+        padding: 0 0.5rem;
+        height: 60vh;
+      }
 
       .image {
         height: 70%;

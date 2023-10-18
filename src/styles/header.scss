@@ -16,6 +16,10 @@
     gap: 1rem;
     height: 4vh;
 
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
     div {
       font: 1rem "Roboto Light", sans-serif;
       color: $white;

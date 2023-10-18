@@ -6,7 +6,7 @@ import VisibilitySensor from "react-visibility-sensor";
 function ProgressionCircle() {
   return (
     <div>
-      <div style={{ width: "6rem" }}>
+      <div className="circle">
         <VisibilitySensor>
           {({ isVisible }) => {
             const percentage = isVisible ? 99 : 0;
