@@ -10,10 +10,10 @@
   @include flex(row, space-between, center);
   z-index: 999;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1300px) {
     width: 90%;
     bottom: 35vh;
-    left: 10%;
+    left: 5%;
     transform: translate(0, 0);
   }
 
@@ -57,12 +57,13 @@
   transform: translate(-50%, 0%);
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     width: 90%;
     height: 80%;
     top: 20%;
-    left: 10%;
+    left: 5%;
     transform: translate(0, 0);
+    height: 75vh;
   }
 
   .inner__carousel {
@@ -76,9 +77,20 @@
       @include flex(column, flex-start, flex-start);
       padding: 0 1rem;
 
-      @media (max-width: 768px) {
-        width: 70vw;
+      @media (max-width: 1500px) {
         padding: 0 0.5rem;
+      }
+
+      @media (max-width: 1300px) {
+        width: calc(90vw / 3);
+      }
+
+      @media (max-width: 1000px) {
+        width: calc(90vw / 2);
+      }
+
+      @media (max-width: 768px) {
+        width: 90vw;
         height: 60vh;
       }
 
