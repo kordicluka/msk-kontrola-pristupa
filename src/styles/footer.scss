@@ -1,12 +1,10 @@
 @import "../App.scss";
 
-@import "../App.scss";
-
 .footer {
   @include flex(column, center, center);
   width: 100%;
   position: relative;
-  background-color: $dark-gray;
+  background-color: $secondary-dark;
 
   .box-container {
     width: 100%;

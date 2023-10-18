@@ -1,0 +1,120 @@
+@import "../App.scss";
+
+.carousel__buttons {
+  position: absolute;
+  bottom: 35vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 75%;
+  padding: 0 2.5%;
+  @include flex(row, space-between, center);
+  z-index: 999;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .carousel__button {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba($color: $light-gray, $alpha: 1);
+    z-index: 10;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transform: translateX(-30%);
+    box-shadow: 0 0 20px rgba($color: $black, $alpha: 0.2);
+    border: 1px solid #aaaaaa;
+
+    svg {
+      color: rgba($color: #000000, $alpha: 0.7);
+      width: 100%;
+      height: 100%;
+    }
+
+    &.right {
+      left: auto;
+      right: 0;
+      transform: translateX(30%);
+    }
+  }
+}
+
+.carousel {
+  width: 75%;
+  @include flex(row, flex-start, flex-start);
+  height: 65vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 80%;
+    top: 20%;
+    left: 10%;
+    transform: translate(0, 0);
+  }
+
+  .inner__carousel {
+    @include flex(row, flex-start, center);
+    height: 100%;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s;
+
+    .project {
+      width: calc(75vw / 3);
+      height: 65vh;
+      @include flex(column, flex-start, flex-start);
+      padding: 0 1rem;
+
+      .image {
+        height: 70%;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content {
+        @include flex(column, flex-start, flex-start);
+        width: 100%;
+        gap: 1rem;
+        height: 30%;
+        padding: 1.5rem 0;
+        position: relative;
+
+        h3 {
+          font: 25px "Roboto Black", sans-serif;
+          color: $dark-gray;
+          text-transform: uppercase;
+        }
+
+        p {
+          font: 12px "Roboto Regular", sans-serif;
+          color: $black;
+          max-width: 100%;
+          text-align: left;
+        }
+
+        .outside__btn {
+          border: 1px solid $black;
+          color: $black;
+          font: 12px "Roboto SemiBold", sans-serif;
+          padding: 0.4rem 0.9rem;
+          position: absolute;
+          bottom: 0;
+          left: 0%;
+        }
+      }
+    }
+  }
+}

@@ -73,10 +73,10 @@ const Header = () => {
         <div className="navbar__center">
           <NavLink to="/" exact>
             Početna
-          </NavLink>
-          <NavLink to="/uredaji">Uređaji</NavLink>
-          <NavLink to="/projekti">Projekti</NavLink>
+          </NavLink>{" "}
           <NavLink to="/o-nama">O nama</NavLink>
+          <NavLink to="/projekti">Projekti</NavLink>
+          <NavLink to="/uredaji">Uređaji</NavLink>
         </div>
         <div className="navbar__right">
           <NavLink className="btn" to="/kontaktiraj-nas">
