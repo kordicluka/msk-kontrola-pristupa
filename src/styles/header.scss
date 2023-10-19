@@ -98,8 +98,18 @@
   .navbar__left {
     padding: 0.3rem 0;
     height: 100%;
-    padding: 0.45rem;
+    padding: 0.3rem;
     z-index: 3;
+
+    @media (max-width: 1300px) {
+      padding: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.1rem;
+      width: 50%;
+    }
+
     .logo {
       height: 100%;
       width: 100%;
@@ -120,7 +130,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       display: none;
     }
 
@@ -138,6 +148,16 @@
       &:hover {
         border-bottom: 3px solid $primary;
       }
+    }
+  }
+
+  .navbar__right {
+    @include flex(row, center, center);
+    height: 100%;
+    gap: 1rem;
+
+    @media (max-width: 1000px) {
+      width: 50%;
     }
   }
 }
