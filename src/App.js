@@ -12,6 +12,7 @@ import projectImageFirst from "./assets/images/project-1.jpg";
 import projectImageSecond from "./assets/images/project-2.jpg";
 import projectImageThird from "./assets/images/project-3.jpg";
 import logo from "./assets/images/logo192.png";
+import sKey2 from "./assets/images/devices/sKey-2.jpg";
 
 export const Context = React.createContext();
 
@@ -87,6 +88,17 @@ function App() {
       year: "2021",
       content: "Sadržaj projekta 1",
       type: "Zatvaranje spremišta",
+    },
+  ]);
+
+  const [devices, setDevices] = useState([
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      description:
+        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+      image: sKey2,
     },
   ]);
 
