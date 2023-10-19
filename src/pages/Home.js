@@ -18,7 +18,6 @@ import instagram_logo from "../assets/images/socials/instagram_logo.png";
 import twitter_logo from "../assets/images/socials/twitter_logo.png";
 import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
 import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
-import logo from "../assets/images/logo.png";
 import Carousel from "../components/Carousel";
 
 const Home = () => {
@@ -543,6 +542,21 @@ const Home = () => {
       <div className="contact">
         <div className="info">
           <h1>Informacije</h1>
+
+          <p>
+            Pogledajte kako sve možete stupit u kontakt s nama. Ukoliko imate
+            bilo kakvih pitanja, slobodno nas kontaktirajte.
+          </p>
+
+          <ul className="contact__info">
+            <li>
+              Telefon: <span>091 - 390 / 5524</span>
+            </li>
+            <li>
+              E-mail:
+              <span>info@msk.hr</span>
+            </li>
+          </ul>
           <p>
             <span>Adresa:</span> Ulica 1, 10000 Zagreb, Hrvatska
           </p>
@@ -552,16 +566,6 @@ const Home = () => {
             Pogledajte kako sve možete stupit u kontakt s nama. Ukoliko imate
             bilo kakvih pitanja, slobodno nas kontaktirajte.
           </p>
-
-          <ul className="contact__info">
-            <li>
-              Telefon: 091 - 390 / 5524 <span> | </span>
-            </li>
-            <li>
-              E-mail:
-              <span>info@msk.hr</span>
-            </li>
-          </ul>
 
           <div className="socials">
             <img src={facebook_logo} alt="facebook_logo" />
