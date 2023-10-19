@@ -98,6 +98,57 @@ function App() {
       image: templateImage,
       description:
         "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+      shortDescription: "All-metal Password standalone access",
+      image: sKey2,
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      shortDescription: "All-metal Password standalone access",
+
+      description:
+        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+      image: sKey2,
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      shortDescription: "All-metal Password standalone access",
+
+      description:
+        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+      image: sKey2,
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      shortDescription: "All-metal Password standalone access",
+
+      image: templateImage,
+      description:
+        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+      image: sKey2,
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      shortDescription: "All-metal Password standalone access",
+
+      description:
+        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+      image: sKey2,
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      shortDescription: "All-metal Password standalone access",
+
+      description:
+        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
       image: sKey2,
     },
   ]);
@@ -124,7 +175,7 @@ function App() {
 
   return (
     <>
-      <Context.Provider value={{ projects, setProjects }}>
+      <Context.Provider value={{ projects, setProjects, devices, setDevices }}>
         <BrowserRouter>
           <Routes>
             <Route element={<Layout />}>

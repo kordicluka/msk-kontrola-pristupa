@@ -25,7 +25,8 @@ const Home = () => {
   const [projectsTypes, setProjectsTypes] = useState(["Svi projekti"]);
   const [selectedProjectType, setSelectedProjectType] =
     useState("Svi projekti");
-  const { projects, setProjects } = React.useContext(Context);
+  const { projects, setProjects, devices, setDevices } =
+    React.useContext(Context);
   const [deviceIndex, setDeviceIndex] = useState(1);
 
   useEffect(() => {
@@ -470,73 +471,37 @@ const Home = () => {
         <Carousel />
       </div>
 
-      <div className="controllers__type">
-        <div className="content">
-          <h1>
-            Različite vrste <span>kontrolera</span>{" "}
-          </h1>
+      <div className="devices">
+        <h1>
+          <span>Uređaji</span> koje koristimo
+        </h1>
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s psum has been tstandard dummy text ever since the 1500s
+        </p>
 
-          <p>
-            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-            pružajući inovativna rješenja za siguran i jednostavan ulazak.
-          </p>
-        </div>
-
-        <div className="list">
-          <div className="item">
-            <div className="image">
-              <img src={heroSlideImageFirst} alt="" />
-              <span className="index">01</span>
+        <div className="devices__container">
+          {devices.map((device) => (
+            <div className="device" key={device.slug}>
+              <div className="content">
+                <div className="top">
+                  <h3>{device.title}</h3>
+                  <p>{device.shortDescription}</p>
+                </div>
+                <div className="bottom">
+                  <Link className="outside__btn" to="/kontaktiraj-nas">
+                    Pogledaj više
+                  </Link>
+                  <Link className="link" to="/kontaktiraj-nas">
+                    Idi na stranicu
+                  </Link>
+                </div>
+              </div>
+              <div className="image">
+                <img src={device.image} alt="" />
+              </div>
             </div>
-
-            <div className="item__content">
-              <h3>Klasičan kontroler</h3>
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when a ever since the 1500s, when a Lorem Ipsum
-                has been the industr
-              </p>
-              <Link className="outside__btn" to="/kontaktiraj-nas">
-                Saznajte više
-              </Link>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="image">
-              <img src={heroSlideImageFirst} alt="" />
-              <span className="index">01</span>
-            </div>
-
-            <div className="item__content">
-              <h3>Kontroler bez pina</h3>
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when a ever since the 1500s, when a Lorem Ipsum
-                has been the industr
-              </p>
-              <Link className="outside__btn" to="/kontaktiraj-nas">
-                Saznajte više
-              </Link>
-            </div>
-          </div>
-          <div className="item">
-            <div className="image">
-              <img src={heroSlideImageThird} alt="" />
-              <span className="index">02</span>
-            </div>
-
-            <div className="item__content">
-              <h3>Zaštićeni kontroler</h3>
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when a ever since the 1500s, when a Lorem Ipsum
-                has been the industr
-              </p>
-              <Link className="outside__btn" to="/kontaktiraj-nas">
-                Saznajte više
-              </Link>
-            </div>
-          </div>
+          ))}{" "}
         </div>
       </div>
 

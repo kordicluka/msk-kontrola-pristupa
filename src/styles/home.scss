@@ -654,148 +654,131 @@
   }
 
   .devices {
+    @include flex(column, center, center);
     width: 100%;
-    @include flex(row, center, center);
-    position: relative;
+    padding: 5vh 12.5%;
 
-    .col-1,
-    .col-2 {
-      width: 50%;
-      @include flex(column, flex-start, center);
-      gap: 2rem;
+    @media only screen and (max-width: 1300px) {
+      padding: 5vh 5%;
+    }
 
-      .image {
-        width: 100%;
-        height: 60vh;
-        position: relative;
-
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          opacity: 0;
-
-          &.active {
-            opacity: 1;
-          }
-        }
+    h1 {
+      font: 35px "Roboto SemiBold", sans-serif;
+      color: $dark-gray;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      span {
+        color: $primary;
       }
 
-      .content {
-        @include flex(column, flex-start, flex-start);
-        width: 100%;
-        padding: 2rem 2rem;
-        gap: 3rem;
-        background-color: $white;
+      @media only screen and (max-width: 1300px) {
+        font: 28px "Roboto Bold", sans-serif;
+        text-align: center;
+        max-width: 100%;
+      }
+    }
 
-        .link {
-          color: $black;
-          font: 13px "Roboto SemiBold", sans-serif;
-          text-decoration: none;
-          border-bottom: 1px solid $black;
-          transition: all 0.3s ease-in-out;
-        }
-        p {
-          color: $black;
-          font: 13px "Roboto Regular", sans-serif;
+    p {
+      text-align: center;
+      max-width: 40%;
+      font: 13px "Roboto Regular", sans-serif;
+
+      @media only screen and (max-width: 1300px) {
+        font: 11px "Roboto Regular", sans-serif;
+        max-width: 90%;
+      }
+    }
+
+    .devices__container {
+      @include flex(row, center, center);
+      gap: 1rem;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 3rem;
+
+      @media only screen and (max-width: 1300px) {
+        gap: 0.5rem;
+      }
+
+      .device {
+        width: calc(50% - 0.5rem);
+        height: 30vh;
+        overflow: hidden;
+        @include flex(row, center, center);
+        background-color: #f1f1f1;
+
+        @media only screen and (max-width: 1300px) {
+          width: calc(50% - 0.5rem);
         }
 
-        h1 {
-          font: 30px "Roboto Regular", sans-serif;
-          color: $black;
-          color: $dark-gray;
-          text-transform: uppercase;
-          span {
-            color: $primary;
+        @media only screen and (max-width: 1000px) {
+          width: calc(100%);
+        }
+
+        .image {
+          width: 50%;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background-color: rgba($color: $gray, $alpha: 0.3);
+          }
+
+          img {
+            width: 100%;
+            height: 100% !important;
+            object-fit: cover;
+            object-position: center;
           }
         }
 
-        .list {
-          @include flex(column, flex-start, flex-start);
-          gap: 1rem;
-          padding: 2rem 0;
-          width: 100%;
+        .content {
+          height: 100%;
+          width: 50%;
+          padding: 1.5rem 1rem;
+          @include flex(column, space-between, flex-start);
 
-          .item {
-            @include flex(row, flex-start, flex-start);
-            gap: 3rem;
+          .top {
+            @include flex(column, flex-start, flex-start);
             width: 100%;
 
-            .index {
-              font: 16px "Roboto Bold", sans-serif;
+            h3 {
+              font: 25px "Roboto Black", sans-serif;
               color: $black;
+              text-transform: uppercase;
+              margin-bottom: 0.5rem;
             }
 
-            .container {
-              @include flex(column, flex-start, flex-start);
-              gap: 0.7rem;
-              margin: 0;
-              padding: 0;
-
-              .link {
-                display: none;
-                color: $black;
-                border-bottom: 1px solid $black;
-                font: 13px "Roboto SemiBold", sans-serif;
-              }
-
-              padding-bottom: 1.5rem;
-              width: 100%;
-
-              h3 {
-                font: 16px "Roboto Bold", sans-serif;
-                color: $black;
-              }
-
-              p {
-                font: 13px "Roboto Regular", sans-serif;
-                color: $black;
-                max-width: 100%;
-                margin: 0.5rem 0;
-                display: none;
-              }
+            p {
+              font: 13px "Roboto Regular", sans-serif;
+              color: $black;
+              max-width: 100%;
+              text-align: left;
             }
+          }
 
-            &.active {
-              .container {
-                p {
-                  display: block;
-                }
-                border-bottom: 1px solid #00000020;
+          .bottom {
+            @include flex(row, flex-start, center);
+            width: 100%;
+            gap: 1rem;
 
-                .link {
-                  display: block;
-                }
-              }
+            .link {
+              color: $black;
+              font: 11px "Roboto SemiBold", sans-serif;
+              border-bottom: 1px solid $black;
             }
           }
         }
-      }
-    }
-
-    .col-1 {
-      .image {
-        height: 80vh;
-      }
-
-      .content {
-        padding-left: 12.5vw;
-        padding-right: 3rem;
-      }
-    }
-
-    .col-2 {
-      .image {
-        height: 60vh;
-      }
-
-      .content {
-        padding-right: 12.5vw;
-        padding-left: 3rem;
       }
     }
   }
@@ -846,153 +829,10 @@
     }
   }
 
-  .controllers__type {
-    width: 100%;
-    padding: 10vh 12.5%;
-    @include flex(column, center, center);
-    position: relative;
-    gap: 1rem;
-
-    @media only screen and (max-width: 1300px) {
-      padding: 5vh 5%;
-    }
-
-    .content {
-      @include flex(column, center, center);
-      background-color: $white;
-      padding-bottom: 1rem;
-
-      h1 {
-        font: 35px "Roboto Black", sans-serif;
-        color: $dark-gray;
-        margin-bottom: 1rem;
-        width: 100%;
-        text-transform: uppercase;
-        text-align: center;
-        span {
-          color: $primary;
-        }
-
-        @media only screen and (max-width: 1000px) {
-          font: 28px "Roboto Bold", sans-serif;
-          text-align: center;
-          max-width: 100%;
-        }
-      }
-
-      p {
-        font: 13px "Roboto Regular", sans-serif;
-        color: $black;
-        margin-bottom: 0.5rem;
-        max-width: 100%;
-        line-height: 1.6;
-
-        @media only screen and (max-width: 1000px) {
-          font: 11px "Roboto Regular", sans-serif;
-          text-align: center;
-          max-width: 100%;
-        }
-      }
-    }
-
-    .list {
-      width: 100%;
-      @include flex(row, flex-start, flex-start);
-      gap: 1rem;
-      overflow: hidden;
-
-      @media only screen and (max-width: 1000px) {
-        @include flex(column, center, center);
-        gap: 1rem;
-      }
-
-      .item {
-        height: 73vh;
-        @include flex(column, flex-start, center);
-        width: 100%;
-
-        .image {
-          width: 100%;
-          height: 70%;
-          position: relative;
-
-          @media only screen and (max-width: 1000px) {
-            height: 60%;
-          }
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
-          }
-
-          .index {
-            position: absolute;
-            left: 2rem;
-            bottom: 0.7rem;
-            transform: translateY(50%);
-            padding: 1rem;
-            background-color: rgba($color: $primary, $alpha: 0.9);
-            color: $white;
-            font: 20px "Roboto Bold", sans-serif;
-
-            @media only screen and (max-width: 1300px) {
-              font: 15px "Roboto Bold", sans-serif;
-            }
-          }
-        }
-
-        .item__content {
-          @include flex(column, flex-start, flex-start);
-          width: 100%;
-          gap: 1rem;
-          height: 30%;
-          background-color: $secondary;
-          padding: 2rem 2rem;
-
-          @media only screen and (max-width: 1300px) {
-            padding: 2rem 1rem;
-          }
-
-          h3 {
-            font: 20px "Roboto SemiBold", sans-serif;
-            color: $light-gray;
-            text-transform: uppercase;
-
-            @media only screen and (max-width: 1300px) {
-              font: 15px "Roboto SemiBold", sans-serif;
-            }
-          }
-
-          p {
-            font: 12px "Roboto Light", sans-serif;
-            color: $gray;
-
-            @media only screen and (max-width: 1300px) {
-              font: 11px "Roboto Light", sans-serif;
-            }
-          }
-
-          .outside__btn {
-            font: 12px "Roboto Light", sans-serif;
-            background-color: $primary;
-
-            @media only screen and (max-width: 1300px) {
-              font: 11px "Roboto Light", sans-serif;
-            }
-          }
-        }
-      }
-    }
-  }
-
   .content__two__picture_central {
     width: 100%;
     padding: 5vh 12.5%;
     @include flex(column, center, center);
-    background-color: $light-gray;
 
     @media only screen and (max-width: 1300px) {
       padding: 5vh 5%;
