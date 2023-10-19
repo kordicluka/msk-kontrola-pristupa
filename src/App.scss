@@ -69,8 +69,13 @@ body {
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  font: 14px "Roboto Regular", sans-serif;
+  font: 13px "Roboto Regular", sans-serif;
   position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+  }
 
   &::before {
     content: "";
@@ -102,11 +107,11 @@ body {
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
-  font: 14px "Roboto SemiBold", sans-serif;
+  font: 13px "Roboto SemiBold", sans-serif;
   position: relative;
 
   @media (max-width: 768px) {
-    font-size: 13px;
+    font-size: 12px;
     padding: 0.4rem 0.9rem;
   }
 
@@ -131,7 +136,7 @@ body {
 
 .link {
   color: $light-gray;
-  font: 0.9rem "Roboto Light", sans-serif;
+  font: 13px "Roboto Light", sans-serif;
   text-decoration: none;
   border-bottom: 1px solid $light-gray;
 }
