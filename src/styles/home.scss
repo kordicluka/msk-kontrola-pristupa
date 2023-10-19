@@ -11,7 +11,7 @@
     margin-bottom: 10vh;
 
     @media only screen and (max-width: 1300px) {
-      height: 80vh;
+      height: 82vh;
     }
 
     .service {
@@ -172,7 +172,7 @@
           }
 
           @media only screen and (max-width: 1300px) {
-            font: 40px "Roboto Black", sans-serif;
+            font: 40px "Roboto Bold", sans-serif;
             width: 100%;
             text-align: center;
           }
@@ -186,7 +186,7 @@
           text-align: left;
 
           @media only screen and (max-width: 1300px) {
-            font: 20px "Roboto Light", sans-serif;
+            font: 17px "Roboto Light", sans-serif;
             width: 100%;
             text-align: center;
           }
@@ -199,7 +199,7 @@
           text-align: left;
 
           @media only screen and (max-width: 1300px) {
-            font: 13px "Roboto Light", sans-serif;
+            font: 11px "Roboto Light", sans-serif;
             width: 100%;
             text-align: center;
           }
@@ -215,7 +215,7 @@
           width: 60%;
 
           @media only screen and (max-width: 1300px) {
-            width: 80%;
+            width: 90%;
           }
         }
 
@@ -257,7 +257,7 @@
       text-transform: uppercase;
 
       @media only screen and (max-width: 1500px) {
-        font: 28px "Roboto SemiBold", sans-serif;
+        font: 28px "Roboto Bold", sans-serif;
         text-align: center;
         max-width: 100%;
       }
@@ -378,7 +378,7 @@
     @media only screen and (max-width: 768px) {
       height: 100%;
       padding: 0 5%;
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
 
     &::before {
@@ -451,9 +451,7 @@
         text-transform: uppercase;
 
         @media only screen and (max-width: 1300px) {
-          font: 25px "Roboto SemiBold", sans-serif;
-          text-align: center;
-          width: 100%;
+          font: 28px "Roboto Bold", sans-serif;
         }
 
         span {
@@ -470,7 +468,6 @@
 
         @media only screen and (max-width: 1300px) {
           font: 11px "Roboto Regular", sans-serif;
-          text-align: center;
           max-width: 100%;
         }
       }
@@ -804,6 +801,7 @@
     @media only screen and (max-width: 1300px) {
       padding: 0 5%;
       padding-bottom: 75vh;
+      padding-bottom: 52vh;
     }
 
     h1 {
@@ -816,12 +814,23 @@
       span {
         color: $primary;
       }
+
+      @media only screen and (max-width: 1300px) {
+        font: 28px "Roboto Bold", sans-serif;
+        text-align: center;
+        max-width: 100%;
+      }
     }
 
     p {
       text-align: center;
       max-width: 40%;
       font: 13px "Roboto Regular", sans-serif;
+
+      @media only screen and (max-width: 1300px) {
+        font: 11px "Roboto Regular", sans-serif;
+        max-width: 90%;
+      }
     }
   }
 
@@ -867,7 +876,7 @@
         line-height: 1.6;
 
         @media only screen and (max-width: 1000px) {
-          font: 12px "Roboto Regular", sans-serif;
+          font: 11px "Roboto Regular", sans-serif;
           text-align: center;
           max-width: 100%;
         }
