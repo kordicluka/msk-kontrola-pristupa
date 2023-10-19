@@ -8,7 +8,6 @@
     position: relative;
     @include flex(column, center, center);
     z-index: 0;
-    margin-bottom: 10vh;
 
     @media only screen and (max-width: 1300px) {
       height: 82vh;
@@ -242,47 +241,12 @@
   .services {
     width: 100%;
     @include flex(column, flex-start, center);
-    padding: 5vh 12.5%;
-
-    @media only screen and (max-width: 1300px) {
-      padding: 5vh 5%;
-    }
-
-    h1 {
-      font: 35px "Roboto SemiBold", sans-serif;
-      color: $dark-gray;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-
-      @media only screen and (max-width: 1500px) {
-        font: 28px "Roboto Bold", sans-serif;
-        text-align: center;
-        max-width: 100%;
-      }
-
-      span {
-        color: $primary;
-      }
-    }
-
-    p {
-      margin-top: 1rem;
-      font: 13px "Roboto Regular", sans-serif;
-      max-width: 40%;
-      text-align: center;
-      line-height: 1.6;
-
-      @media only screen and (max-width: 1500px) {
-        font: 12px "Roboto Regular", sans-serif;
-        max-width: 100%;
-      }
-    }
+    padding: 0vh 12.5%;
 
     .services__container {
       @include flex(row, center, center);
-      gap: 2rem;
-      margin-top: 5vh;
       width: 100%;
+      transform: translateY(-1vh);
 
       @media only screen and (max-width: 900px) {
         @include flex(column, center, center);
@@ -290,41 +254,41 @@
       }
 
       .service {
-        width: calc(100% / 3 - 2rem);
+        width: calc(100% / 3);
         @include flex(column, flex-start, center);
-        height: 65vh;
+        height: 17vh;
+        position: relative;
+        transform: translateY(-5vh);
 
-        @media only screen and (max-width: 1500px) {
-          height: 70vh;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 30%;
+          height: 95%;
+          left: 0;
+          top: 0;
+          z-index: 0;
+          background-color: rgba($color: $white, $alpha: 0.6);
+          backdrop-filter: blur(10px);
+          border-radius: 1rem 0 1rem 0;
+          box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
         }
 
         @media only screen and (max-width: 900px) {
           width: 100%;
-          height: 60vh;
-        }
-
-        .image {
-          width: 100%;
-          height: 40vh;
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          }
         }
 
         .content {
-          height: 25vh;
+          left: 5%;
+          height: 17vh;
           width: 90%;
           padding: 2rem 2rem;
-          @include flex(column, flex-start, center);
+          @include flex(column, flex-start, flex-start);
           gap: 0.5rem;
           background-color: rgba($color: #ffffff, $alpha: 1);
-          transform: translateY(-5vh);
-          position: relative;
+          transform: translateY(-20%);
+          border-radius: 1rem 0 1rem 0;
+          box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
 
           @media only screen and (max-width: 1500px) {
             height: 35vh;
@@ -332,17 +296,24 @@
         }
 
         h2 {
-          font: 20px "Roboto SemiBold", sans-serif;
+          font: 25px "Roboto Black", sans-serif;
           color: $black;
           text-transform: uppercase;
-          width: 100%;
-          text-align: center;
+
+          @media (max-width: 1300px) {
+            font-size: 20px;
+          }
         }
 
         p {
+          font: 12px "Roboto Regular", sans-serif;
+          color: $black;
           max-width: 100%;
-          font: 13px "Roboto Regular", sans-serif;
-          text-align: center;
+          text-align: left;
+
+          @media (max-width: 1300px) {
+            font-size: 12px;
+          }
         }
 
         .outside__btn {
@@ -416,6 +387,7 @@
         @include flex(column, center, center);
         gap: 1rem;
         box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
+        border-radius: 1rem 0 1rem 0;
 
         @media only screen and (max-width: 1300px) {
           bottom: 0;
@@ -472,12 +444,50 @@
         }
       }
 
-      .link {
-        color: $primary;
-        font: 13px "Roboto SemiBold", sans-serif;
-        text-decoration: none;
-        border-bottom: 1px solid $primary;
-        transition: all 0.3s ease-in-out;
+      .list {
+        width: 90%;
+        @include flex(column, flex-start, flex-start);
+        padding-left: 5%;
+
+        .item {
+          @include flex(row, flex-start, flex-start);
+          gap: 1rem;
+          height: 9vh;
+          padding: 1rem 0;
+          border-top: 1px solid $gray;
+
+          .item__content {
+            @include flex(column, flex-start, flex-start);
+            width: 100%;
+            gap: 5px;
+
+            h3 {
+              font: 16px "Roboto Black", sans-serif;
+              color: $black;
+              text-transform: uppercase;
+            }
+
+            p {
+              font: 13px "Roboto Regular", sans-serif;
+              color: $black;
+              max-width: 100%;
+              text-align: left;
+            }
+          }
+
+          .icon {
+            background-color: $primary;
+            height: 100%;
+            aspect-ratio: 1/1 !important;
+            padding: 0.7rem;
+
+            svg {
+              width: 100%;
+              height: 100%;
+              color: $white;
+            }
+          }
+        }
       }
     }
 
@@ -590,7 +600,7 @@
       @include flex(column, flex-start, flex-start);
 
       li {
-        font: 20px "Roboto Regular", sans-serif;
+        font: 20px "Roboto Light", sans-serif;
         span {
           margin-left: 0.5rem;
         }
@@ -624,7 +634,7 @@
       }
 
       p {
-        font: 15px "Roboto Light", sans-serif;
+        font: 14px "Roboto Light", sans-serif;
         color: $white;
       }
 

@@ -189,48 +189,20 @@ const Home = () => {
             />
           </svg>
         </button>
-
-        <div className="service">
-          <h2>Trebate pomoć oko kontrole pristupa?</h2>
-          <p>
-            Skrolajte dolje te istražite naše usluge. Ukoliko imate bilo kakvih
-            pitanja, slobodno nas kontaktirajte.
-          </p>
-        </div>
       </div>
 
       <div className="services">
-        <h1>
-          {" "}
-          <span>Usluge</span> koje nudimo
-        </h1>
-
-        <p>
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s psum has been tstandard dummy text ever since the 1500s
-        </p>
-
         <div className="services__container">
           <div className="service">
-            <div className="image">
-              <img src={heroSlideImageFirst} alt="" />
-            </div>
             <div className="content">
               <h2>Ulazi u zgrade</h2>
               <p>
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the
               </p>
-
-              <Link className="outside__btn" to="/kontaktiraj-nas">
-                Saznajte više
-              </Link>
             </div>
           </div>
           <div className="service">
-            <div className="image">
-              <img src={heroSlideImageSecond} alt="" />
-            </div>{" "}
             <div className="content">
               <h2>Zaštita prostorija</h2>
               <p>
@@ -238,15 +210,9 @@ const Home = () => {
                 since the 1500s psum has been tstandard dummy text ever since
                 the 1500s
               </p>
-              <Link className="outside__btn" to="/kontaktiraj-nas">
-                Saznajte više
-              </Link>
             </div>
           </div>
           <div className="service">
-            <div className="image">
-              <img src={heroSlideImageThird} alt="" />
-            </div>
             <div className="content">
               <h2>Elektronski kontroleri</h2>
               <p>
@@ -254,9 +220,6 @@ const Home = () => {
                 since the 1500s psum has been tstandard dummy text ever since
                 the 1500s
               </p>
-              <Link className="outside__btn" to="/kontaktiraj-nas">
-                Saznajte više
-              </Link>
             </div>
           </div>
         </div>
@@ -278,9 +241,83 @@ const Home = () => {
             <ProgressionCircle value={99} text={"Zadovoljni klijenti"} />
             <h4 className="circle__text">ZADOVOLJNI KLIJENTI</h4>
           </div>
-          <Link className="outside__btn" to="/kontaktiraj-nas">
-            Saznajte više
-          </Link>
+          <div className="list">
+            <div className="item">
+              <div className="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                  />
+                </svg>
+              </div>
+              <div className="item__content">
+                <h3>Kvaliteta</h3>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s psum has been tstandard dummy text ever since
+                </p>
+              </div>
+            </div>
+            <div className="item">
+              <div className="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                  />
+                </svg>
+              </div>
+              <div className="item__content">
+                <h3>Održivost</h3>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s psum has been tstandard dummy text ever since
+                </p>
+              </div>
+            </div>
+            <div className="item">
+              <div className="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                  />
+                </svg>
+              </div>
+              <div className="item__content">
+                <h3>Sigurnost</h3>
+                <p>
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s psum has been tstandard dummy text ever since
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="image">
           <img src={heroSlideImageFirst} alt="" />
