@@ -22,7 +22,7 @@ function App() {
       title: "Projekt 1",
       shortDescription: "Vaša firma se ističe u industriji kontrole prisazak. ",
       description: "Opis projekta 1",
-      image: projectImageFirst,
+      image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
       content: "Sadržaj projekta 1",
@@ -34,7 +34,7 @@ function App() {
       shortDescription:
         "Vaša firma se ističe u industriji ki jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
-      image: projectImageSecond,
+      image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
       content: "Sadržaj projekta 1",
@@ -46,7 +46,7 @@ function App() {
       shortDescription:
         "Vaša firma se ističe u industriji k i jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
       description: "Opis projekta 1",
-      image: projectImageThird,
+      image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
       content: "Sadržaj projekta 1",

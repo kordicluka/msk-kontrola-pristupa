@@ -141,7 +141,6 @@ const Home = () => {
             <div className="slide__content">
               <h2>{slide.subtitle}</h2>
               <h1>{slide.title}</h1>
-              <div className="slide__description">{slide.description}</div>
               <div className="slide__actions">{slide.actions}</div>
             </div>
           </div>
