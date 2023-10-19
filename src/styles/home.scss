@@ -452,6 +452,8 @@
 
         @media only screen and (max-width: 1300px) {
           font: 28px "Roboto Bold", sans-serif;
+          width: 100%;
+          text-align: center;
         }
 
         span {
@@ -948,11 +950,19 @@
             font: 20px "Roboto SemiBold", sans-serif;
             color: $light-gray;
             text-transform: uppercase;
+
+            @media only screen and (max-width: 1300px) {
+              font: 15px "Roboto SemiBold", sans-serif;
+            }
           }
 
           p {
             font: 12px "Roboto Light", sans-serif;
             color: $gray;
+
+            @media only screen and (max-width: 1300px) {
+              font: 11px "Roboto Light", sans-serif;
+            }
           }
 
           .outside__btn {
@@ -960,6 +970,10 @@
             color: $gray;
             font: 12px "Roboto Light", sans-serif;
             padding: 0.4rem 0.9rem;
+
+            @media only screen and (max-width: 1300px) {
+              font: 11px "Roboto Light", sans-serif;
+            }
           }
         }
       }
@@ -1021,12 +1035,20 @@
           font: 40px "Roboto SemiBold", sans-serif;
           color: $light-gray;
           text-transform: uppercase;
+
+          @media only screen and (max-width: 1300px) {
+            font: 28px "Roboto SemiBold", sans-serif;
+          }
         }
 
         p {
           font: 13px "Roboto Light", sans-serif;
           color: $gray;
           max-width: 90%;
+
+          @media only screen and (max-width: 1300px) {
+            font: 11px "Roboto Light", sans-serif;
+          }
         }
 
         .outside__btn {
@@ -1034,6 +1056,10 @@
           color: $gray;
           font: 13px "Roboto Light", sans-serif;
           padding: 0.4rem 0.9rem;
+
+          @media only screen and (max-width: 1300px) {
+            font: 11px "Roboto Light", sans-serif;
+          }
         }
       }
     }
