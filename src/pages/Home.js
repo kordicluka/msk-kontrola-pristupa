@@ -19,6 +19,8 @@ import twitter_logo from "../assets/images/socials/twitter_logo.png";
 import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
 import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
 import Carousel from "../components/Carousel";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -28,6 +30,11 @@ const Home = () => {
   const { projects, setProjects, devices, setDevices } =
     React.useContext(Context);
   const [deviceIndex, setDeviceIndex] = useState(1);
+
+  useEffect(() => {
+    Aos.init({ duration: 1700 });
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -238,7 +245,12 @@ const Home = () => {
             stanarima i ostalima da koriste privjeske, kartice ili PIN-ove za
             brz i pouzdan ulaz u objekte
           </p>
-          <div className="circle__container">
+          <div
+            className="circle__container"
+            data-aos-once="false"
+            data-aos="fade-up"
+            data-aos-duration="350"
+          >
             <ProgressionCircle value={99} text={"Zadovoljni klijenti"} />
             <h4 className="circle__text">ZADOVOLJNI KLIJENTI</h4>
           </div>
@@ -461,14 +473,24 @@ const Home = () => {
 
       <div className="whole__image__section">
         <div className="background__image">
-          <img src={contactImage} alt="" />
+          <img src={templateImage} alt="" />
         </div>
-        <div className="image">
-          <img src={contactImage} alt="" />
+        <div
+          className="image"
+          data-aos="fade-up"
+          data-aos-duration="350"
+          data-aos-once="false"
+        >
+          <img src={templateImage} alt="" />
         </div>
 
-        <div className="content">
-          <h2>Reference</h2>
+        <div
+          className="content"
+          data-aos="fade-up"
+          data-aos-duration="350"
+          data-aos-once="false"
+        >
+          <h2>Lorem impsum</h2>
           <h1>Kontrola pristupa</h1>
           <p>
             Lorem Ipsum has been the industry's standard dummy text ever since
@@ -487,28 +509,44 @@ const Home = () => {
       </div>
 
       <div className="projects">
-        <h1>
+        <h1 data-aos-once="false" data-aos="fade-up" data-aos-duration="350">
           Izdvojeni<span>projekti</span>
         </h1>
 
-        <p>
+        <p data-aos-once="false" data-aos="fade-up" data-aos-duration="350">
           Lorem Ipsum has been the industry's standard dummy text ever since the
         </p>
         <Carousel />
       </div>
 
       <div className="devices">
-        <h1>
+        <h1
+          data-aos-once="false"
+          data-aos="fade-up"
+          data-aos-duration="350"
+          data-aos-delay="150"
+        >
           <span>Uređaji</span> koje koristimo
         </h1>
-        <p>
+        <p
+          data-aos-once="false"
+          data-aos="fade-up"
+          data-aos-duration="350"
+          data-aos-delay="150"
+        >
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s psum has been tstandard dummy text ever since the 1500s
         </p>
 
         <div className="devices__container">
-          {devices.map((device) => (
-            <div className="device" key={device.slug}>
+          {devices.map((device, index) => (
+            <div
+              className="device"
+              key={device.index}
+              data-aos-once="false"
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos-duration="350"
+            >
               <div className="content">
                 <div className="top">
                   <h3>{device.title}</h3>
@@ -528,33 +566,6 @@ const Home = () => {
               </div>
             </div>
           ))}{" "}
-        </div>
-      </div>
-
-      <div className="slide__template__1">
-        <div className="content">
-          <h3>
-            Prvi <span>naslov</span>
-          </h3>
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text ever since the 1500s
-          </p>
-
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text ever since the 1500s
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text
-          </p>
-
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text ever since the 1500s
-          </p>
-        </div>
-        <div className="image">
-          <img src={heroSlideImageSecond} alt="" />
         </div>
       </div>
 

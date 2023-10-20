@@ -2,11 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import "../styles/carousel.scss";
 import { Context } from "../App";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Carousel = () => {
   const carousel = useRef();
   const displayWidth = useRef();
   const [translate, setTranslate] = useState(0);
+
+  useEffect(() => {
+    Aos.init({ duration: 1700 });
+  }, []);
 
   const { projects, setProjects } = React.useContext(Context);
 
@@ -55,7 +61,7 @@ const Carousel = () => {
           className="carousel__button"
           onClick={translateLeft}
           data-aos="fade-left"
-          data-aos-duration="1000"
+          data-aos-duration="350"
           data-aos-once="false"
         >
           <svg
@@ -77,7 +83,7 @@ const Carousel = () => {
           className="carousel__button right"
           onClick={translateRight}
           data-aos="fade-right"
-          data-aos-duration="1000"
+          data-aos-duration="350"
           data-aos-once="false"
         >
           <svg
@@ -103,7 +109,12 @@ const Carousel = () => {
           ref={carousel}
         >
           {projects.map((project) => (
-            <div className="project">
+            <div
+              className="project"
+              data-aos="slide-up"
+              data-aos-duration="350"
+              data-aos-once="false"
+            >
               <div className="image">
                 <img src={project.image} alt={project.title} />
               </div>
