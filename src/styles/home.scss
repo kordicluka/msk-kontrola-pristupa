@@ -409,7 +409,7 @@
           color: $black;
 
           @media only screen and (max-width: 1300px) {
-            font: 12px "Roboto Bold", sans-serif;
+            font: 11px "Roboto Black", sans-serif;
             text-align: center;
           }
         }
@@ -464,6 +464,10 @@
 
           @media only screen and (max-width: 1300px) {
             height: 11vh;
+          }
+
+          @media only screen and (max-width: 400px) {
+            height: 13vh;
           }
 
           .item__content {
@@ -812,15 +816,22 @@
 
   .whole__image__section {
     position: relative;
-    height: 60vh;
+    height: 75vh;
     width: 100%;
     overflow: hidden;
     margin-top: 15vh;
+    padding: 10vh 12.5%;
+    @include flex(row, center, center);
+    gap: 2%;
 
-    .image {
+    .background__image {
       width: 100%;
       height: 100%;
       overflow: hidden;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      top: 0;
 
       img {
         width: 100%;
@@ -831,57 +842,69 @@
       }
     }
 
+    .image {
+      width: 48%;
+      height: 100%;
+      z-index: 2;
+      overflow: hidden;
+      box-shadow: 0px 0px 30px 0px rgba($color: $black, $alpha: 0.7);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(0.8);
+      }
+    }
+
     .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @include flex(column, center, center);
+      width: 50%;
+      padding-left: 2rem;
+      @include flex(column, flex-start, flex-start);
 
       h2 {
         font: 20px "Roboto SemiBold", sans-serif;
         color: $white;
         text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        max-width: 100%;
+        letter-spacing: 1px;
         span {
           color: $primary;
         }
 
         @media only screen and (max-width: 1300px) {
           font: 17px "Roboto Bold", sans-serif;
-          text-align: center;
-          max-width: 100%;
         }
       }
 
       h1 {
-        font: 50px "Roboto Black", sans-serif;
+        font: 60px "Roboto Black", sans-serif;
         color: $white;
         text-transform: uppercase;
-        text-align: center;
         margin-bottom: 1rem;
+        text-align: left;
+        max-width: 100%;
         span {
           color: $primary;
         }
 
         @media only screen and (max-width: 1300px) {
           font: 40px "Roboto Bold", sans-serif;
-          text-align: center;
-          max-width: 100%;
         }
       }
 
       p {
-        font: 13px "Roboto Regular", sans-serif;
+        font: 13px "Roboto Light", sans-serif;
         color: $white;
-        text-align: center;
-        max-width: 50%;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+        text-align: left;
+        max-width: 70%;
 
         @media only screen and (max-width: 1300px) {
           font: 11px "Roboto Regular", sans-serif;
-          max-width: 100%;
         }
       }
     }
@@ -893,7 +916,7 @@
     @include flex(column, center, center);
     position: relative;
     padding-bottom: 68vh;
-    transform: translateY(-14vh);
+    margin-top: 10vh;
 
     @media only screen and (max-width: 1300px) {
       padding: 0 5%;

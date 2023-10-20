@@ -460,26 +460,40 @@ const Home = () => {
       </div>
 
       <div className="whole__image__section">
+        <div className="background__image">
+          <img src={contactImage} alt="" />
+        </div>
         <div className="image">
           <img src={contactImage} alt="" />
         </div>
 
         <div className="content">
           <h2>Reference</h2>
-
-          <h1>Izdvojeni projekti</h1>
+          <h1>Kontrola pristupa</h1>
           <p>
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s psum has been tstandard dummy text ever since the 1500s
+          </p>{" "}
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
           </p>
-
           <Link className="btn" to="kontaktiraj-nas">
-            Pogledajte sve projekte
+            Pogledajte više
           </Link>
         </div>
       </div>
 
       <div className="projects">
+        <h1>
+          Izdvojeni<span>projekti</span>
+        </h1>
+
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+        </p>
         <Carousel />
       </div>
 

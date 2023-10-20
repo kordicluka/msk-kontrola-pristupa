@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import "../styles/header.scss";
@@ -9,6 +9,8 @@ import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
 import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
 
 const Header = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
     <>
       <div className="top__header">
@@ -82,7 +84,10 @@ const Header = () => {
           <NavLink className="btn" to="/kontaktiraj-nas">
             Kontaktirajte nas
           </NavLink>
-          <button className="menu__btn">
+          <button
+            className="menu__btn"
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -99,6 +104,22 @@ const Header = () => {
             </svg>
           </button>
         </div>
+      </div>
+
+      <div className={`mobile__menu ${showMobileMenu ? "show" : ""}`}>
+        <div className="links">
+          <NavLink to="/" exact>
+            Početna
+          </NavLink>{" "}
+          <NavLink to="/o-nama">O nama</NavLink>
+          <NavLink to="/projekti">Projekti</NavLink>
+          <NavLink to="/uredaji">Uređaji</NavLink>
+        </div>
+
+        <button
+          className={showMobileMenu ? "close__btn show" : "close__btn"}
+          onClick={() => setShowMobileMenu(false)}
+        ></button>
       </div>
     </>
   );
