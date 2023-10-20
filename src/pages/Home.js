@@ -459,6 +459,26 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="whole__image__section">
+        <div className="image">
+          <img src={contactImage} alt="" />
+        </div>
+
+        <div className="content">
+          <h2>Usluge</h2>
+
+          <h1>Pogledajte šta vam sve omogućujemo</h1>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
+          </p>
+
+          <Link className="btn" to="kontaktiraj-nas">
+            Kontaktirajte nas
+          </Link>
+        </div>
+      </div>
+
       <div className="projects">
         <h1>
           Izdvojeni <span>projekti</span>
@@ -505,38 +525,30 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="content__two__picture_central">
+      <div className="slide__template__1">
         <div className="content">
-          <div className="image">
-            <img src={heroSlideImageFirst} alt="" />
-          </div>
-          <div className="content">
-            <h3>
-              Prvi <span>naslov</span>
-            </h3>
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s psum has been tstandard dummy text ever since the 1500s
-            </p>
+          <h3>
+            Prvi <span>naslov</span>
+          </h3>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
+          </p>
 
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s psum has been tstandard dummy text ever since the 1500s
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s psum has been tstandard dummy text
-            </p>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text
+          </p>
 
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s psum has been tstandard dummy text ever since the 1500s
-            </p>
-            <Link className="outside__btn" to="/kontaktiraj-nas">
-              Saznajte više
-            </Link>
-          </div>
-          <div className="image">
-            <img src={heroSlideImageSecond} alt="" />
-          </div>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
+          </p>
+        </div>
+        <div className="image">
+          <img src={heroSlideImageSecond} alt="" />
         </div>
       </div>
 
