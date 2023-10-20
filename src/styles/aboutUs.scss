@@ -10,6 +10,7 @@
     position: relative;
     transform: translateY(-6vh);
     margin-bottom: 5vh;
+    animation: slideUp 0.5s ease-in-out;
 
     @media only screen and (max-width: 1300px) {
       height: 100%;
@@ -194,5 +195,16 @@
         object-fit: cover;
       }
     }
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(5vh);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-6vh);
   }
 }

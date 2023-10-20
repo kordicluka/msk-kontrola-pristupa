@@ -60,6 +60,8 @@
       border: none;
       outline: none;
       cursor: pointer;
+      transition: left 1s;
+      animation: slideLeft 0.5s ease-in-out forwards;
 
       @media only screen and (max-width: 1300px) {
         left: 2%;
@@ -74,6 +76,7 @@
       &.right {
         left: auto;
         right: 12.5%;
+        animation: slideRight 0.5s ease-in-out forwards;
 
         @media only screen and (max-width: 1300px) {
           right: 2%;
@@ -150,6 +153,7 @@
         transition: all 0.3s ease-in-out;
         z-index: 1;
         opacity: 0;
+        animation: slideUpContent 0.4s ease-in-out forwards;
 
         @media only screen and (max-width: 1300px) {
           width: 80%;
@@ -242,6 +246,7 @@
     width: 100%;
     @include flex(column, flex-start, center);
     padding: 0vh 12.5%;
+    margin-bottom: 5vh;
 
     @media only screen and (max-width: 1300px) {
       padding: 0vh 5%;
@@ -262,7 +267,16 @@
         @include flex(column, flex-start, center);
         height: 17vh;
         position: relative;
-        transform: translateY(-5vh);
+        transform: translateY(10rem);
+        animation: slideService 0.4s ease-in-out forwards;
+
+        &:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.2s;
+        }
 
         &::before {
           content: "";
@@ -982,5 +996,52 @@
         max-width: 90%;
       }
     }
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-30rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(30rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(10rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes slideUpContent {
+  0% {
+    transform: translateY(90%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(50%) translateX(-50%);
+  }
+}
+
+@keyframes slideService {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5vh);
   }
 }

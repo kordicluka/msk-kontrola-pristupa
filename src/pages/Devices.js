@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import contactImage from "../assets/images/contact.jpg";
 import { Context } from "../App";
 import "../styles/devices.scss";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Devices = () => {
   const { projects, setProjects, devices, setDevices } =
     React.useContext(Context);
+  useEffect(() => {
+    Aos.init({ duration: 1700 });
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="devices page">
       <div className="page__hero">

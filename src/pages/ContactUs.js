@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import contactImage from "../assets/images/contact.jpg";
 import facebook_logo from "../assets/images/socials/facebook_logo.png";
 import instagram_logo from "../assets/images/socials/instagram_logo.png";
@@ -7,8 +7,14 @@ import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
 import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
 import mapImage from "../assets/images/map.png";
 import "../styles/contact.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const ContactUs = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1700 });
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="contact page">
       <div className="page__hero">

@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import contactImage from "../assets/images/contact.jpg";
 import heroSlideImageFirst from "../assets/images/hero-slide-1.jpg";
 import ProgressionCircle from "../components/ProgressionCircle";
 import "../styles/aboutUs.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const AboutUs = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1700 });
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="page about__us">
       <div className="page__hero">
