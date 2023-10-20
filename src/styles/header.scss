@@ -200,7 +200,8 @@
 }
 
 .mobile__menu {
-  @include flex(column, center, center);
+  @include flex(column, flex-start, center);
+  padding: 1rem;
   position: fixed;
   top: 0;
   left: -1px;
@@ -209,10 +210,87 @@
   background-color: rgba($color: $white, $alpha: 1);
   z-index: 10000000000;
   transform: translateX(-100%);
+  opacity: 0;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+
+  .top {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+    padding: 0 1rem;
+    padding-bottom: 2rem;
+
+    .logo {
+      width: 40%;
+      cursor: pointer;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    p {
+      font: 13px "Roboto Regular", sans-serif;
+      color: $black;
+    }
+  }
+
+  .links {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+    padding: 0 1rem;
+
+    a {
+      text-decoration: none;
+      color: $black;
+      font: 16px "Roboto SemiBold", sans-serif;
+      @include flex(row, flex-start, center);
+      width: 100%;
+      padding: 1rem 0;
+      transition: all 0.2s ease-in-out;
+      border-bottom: 1px solid $gray;
+      text-transform: uppercase;
+      &:nth-child(1) {
+        border-top: 1px solid $gray;
+      }
+
+      &.active,
+      &:hover {
+        color: $primary-dark;
+      }
+    }
+  }
+
+  .bottom {
+    width: 100%;
+    @include flex(column, center, center);
+    padding: 0 1rem;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+
+    .socials {
+      @include flex(row, center, center);
+      gap: 1rem;
+
+      img {
+        height: 3.5vh;
+        width: 3.5vh;
+        cursor: pointer;
+        filter: brightness(0);
+      }
+    }
+
+    p {
+      font: 13px "Roboto Regular", sans-serif;
+      color: $black;
+      text-align: center;
+    }
+  }
 
   &.show {
     transform: translateX(0%);
+    opacity: 1;
   }
 
   .close__btn {

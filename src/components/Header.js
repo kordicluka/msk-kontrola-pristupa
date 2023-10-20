@@ -113,6 +113,16 @@ const Header = () => {
       </div>
 
       <div className={`mobile__menu ${showMobileMenu ? "show" : ""}`}>
+        <div className="top">
+          <Link className="logo" to="/">
+            <img src={logo} alt="logo" />
+          </Link>{" "}
+          <p>
+            Vaša firma se ističe u industriji kontrole pristupa u zgradama,
+            pružajući inovativna rješenja za siguran i jednostavan ulazak.
+          </p>
+        </div>
+
         <div className="links">
           <NavLink to="/" exact>
             Početna
@@ -120,6 +130,20 @@ const Header = () => {
           <NavLink to="/o-nama">O nama</NavLink>
           <NavLink to="/projekti">Projekti</NavLink>
           <NavLink to="/uredaji">Uređaji</NavLink>
+          <NavLink to="/kontaktiraj-nas">Kontaktirajte nas</NavLink>
+        </div>
+
+        <div className="bottom">
+          <div className="socials">
+            <img src={facebook_logo} alt="facebook_logo" />
+            <img src={instagram_logo} alt="instagram_logo" />
+            <img src={twitter_logo} alt="twitter_logo" />
+            <img src={tiktok_logo} alt="tiktok_logo" />
+            <img src={pinterest_logo} alt="pinterest_logo" />
+          </div>
+          <div className="rights">
+            <p>© 2023 MSK. Sva prava pridržana.</p>
+          </div>
         </div>
 
         <button
