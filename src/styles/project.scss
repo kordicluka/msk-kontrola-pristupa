@@ -1,0 +1,195 @@
+@import "../App.scss";
+
+.project {
+  margin-bottom: 10vh;
+  .project__image {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    padding: 0 12.5%;
+    position: relative;
+    padding-top: 5vh;
+
+    img {
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .info {
+    @include flex(column, center, center);
+    width: 100%;
+    padding: 5vh 12.5%;
+
+    h2 {
+      font: 20px "Roboto SemiBold", sans-serif;
+      color: $dark-gray;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      span {
+        color: $primary;
+      }
+
+      @media only screen and (max-width: 1300px) {
+        font: 28px "Roboto Bold", sans-serif;
+        text-align: center;
+        max-width: 100%;
+      }
+    }
+
+    h1 {
+      font: 65px "Roboto SemiBold", sans-serif;
+      color: $dark-gray;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      span {
+        color: $primary;
+      }
+
+      @media only screen and (max-width: 1300px) {
+        font: 28px "Roboto Bold", sans-serif;
+        text-align: center;
+        max-width: 100%;
+      }
+    }
+
+    .description {
+      font: 15px "Roboto Regular", sans-serif;
+      color: $black;
+      max-width: 60%;
+      text-align: left;
+      margin-bottom: 1rem;
+      text-align: center;
+      @media only screen and (max-width: 1300px) {
+        font: 11px "Roboto Regular", sans-serif;
+        max-width: 90%;
+      }
+    }
+
+    .address,
+    .year {
+      font: 15px "Roboto SemiBold", sans-serif;
+      color: $black;
+      max-width: 60%;
+      text-align: left;
+      margin-top: 1rem;
+
+      @media only screen and (max-width: 1300px) {
+        font: 11px "Roboto Regular", sans-serif;
+        max-width: 90%;
+      }
+    }
+  }
+
+  .project__content {
+    @include flex(column, center, center);
+    width: 100%;
+    padding: 5vh 12.5%;
+    margin-top: 10vh;
+
+    .slide {
+      @include flex(row, center, center);
+      width: 100%;
+      height: 60vh;
+
+      &.reverse {
+        @include flex(row-reverse, center, center);
+      }
+
+      .image {
+        width: 50%;
+        height: 60vh;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100% !important;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .content {
+        @include flex(column, center, center);
+        width: 50%;
+        padding-left: 5%;
+        height: 60vh;
+        gap: 1rem;
+
+        h1 {
+          font: 35px "Roboto Bold", sans-serif;
+          color: $black;
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+          text-align: left;
+          @media only screen and (max-width: 1300px) {
+            font: 28px "Roboto Bold", sans-serif;
+            text-align: center;
+            max-width: 100%;
+          }
+        }
+
+        p {
+          font: 13px "Roboto Regular", sans-serif;
+          color: $black;
+          max-width: 100%;
+          text-align: left;
+          @media only screen and (max-width: 1300px) {
+            font: 11px "Roboto Regular", sans-serif;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .projects {
+    width: 100%;
+    padding: 0 12.5%;
+    @include flex(column, center, center);
+    position: relative;
+    padding-bottom: 68vh;
+    margin-top: 10vh;
+
+    @media only screen and (max-width: 1300px) {
+      padding: 0 5%;
+      padding-bottom: 60vh;
+      padding-top: 5vh;
+    }
+
+    h1 {
+      font: 35px "Roboto SemiBold", sans-serif;
+      color: $dark-gray;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      span {
+        color: $primary;
+      }
+
+      @media only screen and (max-width: 1300px) {
+        font: 28px "Roboto Bold", sans-serif;
+        text-align: center;
+        max-width: 100%;
+      }
+    }
+
+    p {
+      text-align: center;
+      max-width: 40%;
+      font: 13px "Roboto Regular", sans-serif;
+
+      @media only screen and (max-width: 1300px) {
+        font: 11px "Roboto Regular", sans-serif;
+        max-width: 90%;
+      }
+    }
+  }
+}
