@@ -544,7 +544,7 @@ const Home = () => {
               className="device"
               key={device.index}
               data-aos-once="false"
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos={index % 2 === 0 ? "fade-up" : "fade-up"}
               data-aos-duration="350"
             >
               <div className="content">

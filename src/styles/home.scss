@@ -259,7 +259,7 @@
 
       @media only screen and (max-width: 900px) {
         @include flex(column, center, center);
-        gap: 1rem;
+        gap: 2rem;
       }
 
       .service {
@@ -293,6 +293,7 @@
 
         @media only screen and (max-width: 900px) {
           width: 100%;
+          height: 25vh;
         }
 
         .content {
@@ -693,6 +694,7 @@
     @include flex(column, center, center);
     width: 100%;
     padding: 5vh 12.5%;
+    overflow: hidden;
 
     @media only screen and (max-width: 1300px) {
       padding: 5vh 5%;
@@ -733,6 +735,7 @@
       flex-wrap: wrap;
       width: 100%;
       margin-top: 3rem;
+      overflow: hidden;
 
       @media only screen and (max-width: 1300px) {
         gap: 0.5rem;
