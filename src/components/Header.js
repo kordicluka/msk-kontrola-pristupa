@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import "../styles/header.scss";
@@ -7,9 +7,15 @@ import instagram_logo from "../assets/images/socials/instagram_logo.png";
 import twitter_logo from "../assets/images/socials/twitter_logo.png";
 import tiktok_logo from "../assets/images/socials/tiktok_logo.png";
 import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setShowMobileMenu(false); // Set showMobileMenu to false when the URL changes
+  }, [location.pathname]);
 
   return (
     <>

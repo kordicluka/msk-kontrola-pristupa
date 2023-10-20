@@ -78,8 +78,13 @@ const Footer = () => {
             <h3> Kontakt</h3>
 
             <ul>
-              <li>Pozivom na broj telefona: 091 - 734 / 4974</li>
-              <li>Putem e-maila: info@msk.hr</li>
+              <li>
+                Pozivom na broj telefona:{" "}
+                <a href="tel:0917344974">091 - 734 / 4974</a>{" "}
+              </li>
+              <li>
+                Putem e-maila: <a href="mailto:info@msk.hr">info@msk.hr</a>
+              </li>
               <li>Ispunjavanjem forme klikom na link ispod.</li>
               <Link className="btn" to="/kontaktirajte-nas">
                 {" "}

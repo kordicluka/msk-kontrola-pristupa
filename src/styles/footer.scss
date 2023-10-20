@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     padding-bottom: 5vh;
 
-    @media (max-width: 1600px) {
+    @media (max-width: 1300px) {
       padding: 3vh 5%;
     }
 
@@ -123,6 +123,7 @@
 
             &:hover {
               color: $white;
+              text-decoration: underline;
             }
           }
         }
@@ -143,6 +144,10 @@
     @include flex(column, center, center);
     gap: 0.5rem;
 
+    @media (max-width: 1300px) {
+      padding: 0 5%;
+    }
+
     .bottom-container {
       @include flex(row, center, center);
       gap: 0.5rem;
@@ -152,7 +157,12 @@
       .links {
         position: absolute;
         left: 0;
+
         @include flex(row, center, center);
+
+        @media (max-width: 768px) {
+          display: none;
+        }
 
         a {
           font-size: 0.7rem;
