@@ -815,7 +815,6 @@
     height: 60vh;
     width: 100%;
     overflow: hidden;
-
     margin-top: 15vh;
 
     .image {
@@ -848,6 +847,12 @@
         span {
           color: $primary;
         }
+
+        @media only screen and (max-width: 1300px) {
+          font: 17px "Roboto Bold", sans-serif;
+          text-align: center;
+          max-width: 100%;
+        }
       }
 
       h1 {
@@ -859,6 +864,12 @@
         span {
           color: $primary;
         }
+
+        @media only screen and (max-width: 1300px) {
+          font: 40px "Roboto Bold", sans-serif;
+          text-align: center;
+          max-width: 100%;
+        }
       }
 
       p {
@@ -867,6 +878,11 @@
         text-align: center;
         max-width: 50%;
         margin-bottom: 1rem;
+
+        @media only screen and (max-width: 1300px) {
+          font: 11px "Roboto Regular", sans-serif;
+          max-width: 100%;
+        }
       }
     }
   }
@@ -875,11 +891,9 @@
     width: 100%;
     padding: 0 12.5%;
     @include flex(column, center, center);
-    margin-top: 5vh;
     position: relative;
     padding-bottom: 68vh;
-    margin-bottom: 5vh;
-    margin-top: 10vh;
+    transform: translateY(-14vh);
 
     @media only screen and (max-width: 1300px) {
       padding: 0 5%;

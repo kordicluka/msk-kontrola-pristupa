@@ -465,29 +465,21 @@ const Home = () => {
         </div>
 
         <div className="content">
-          <h2>Usluge</h2>
+          <h2>Reference</h2>
 
-          <h1>Pogledajte šta vam sve omogućujemo</h1>
+          <h1>Izdvojeni projekti</h1>
           <p>
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s psum has been tstandard dummy text ever since the 1500s
           </p>
 
           <Link className="btn" to="kontaktiraj-nas">
-            Kontaktirajte nas
+            Pogledajte sve projekte
           </Link>
         </div>
       </div>
 
       <div className="projects">
-        <h1>
-          Izdvojeni <span>projekti</span>
-        </h1>
-        <p>
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s psum has been tstandard dummy text ever since the 1500s
-        </p>
-
         <Carousel />
       </div>
 
