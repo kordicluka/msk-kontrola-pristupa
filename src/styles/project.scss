@@ -91,20 +91,17 @@
     @include flex(column, center, center);
     width: 100%;
     padding: 5vh 12.5%;
-    margin-top: 10vh;
+    overflow: hidden;
+    gap: 5vh;
 
     .slide {
-      @include flex(row, center, center);
-      width: 100%;
       height: 60vh;
-
-      &.reverse {
-        @include flex(row-reverse, center, center);
-      }
+      width: 100%;
+      @include flex(row, center, center);
 
       .image {
         width: 50%;
-        height: 60vh;
+        height: 100%;
         overflow: hidden;
 
         img {
@@ -116,18 +113,18 @@
       }
 
       .content {
-        @include flex(column, center, center);
+        @include flex(column, center, flex-start);
         width: 50%;
         padding-left: 5%;
-        height: 60vh;
-        gap: 1rem;
+        height: 100%;
 
         h1 {
-          font: 35px "Roboto Bold", sans-serif;
+          font: 45px "Roboto Bold", sans-serif;
           color: $black;
           text-transform: uppercase;
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
           text-align: left;
+
           @media only screen and (max-width: 1300px) {
             font: 28px "Roboto Bold", sans-serif;
             text-align: center;
@@ -136,14 +133,25 @@
         }
 
         p {
-          font: 13px "Roboto Regular", sans-serif;
+          font: 15px "Roboto Regular", sans-serif;
           color: $black;
           max-width: 100%;
           text-align: left;
+          margin-top: 0.5rem;
+
           @media only screen and (max-width: 1300px) {
             font: 11px "Roboto Regular", sans-serif;
             max-width: 100%;
           }
+        }
+      }
+
+      &.reverse {
+        @include flex(row-reverse, center, center);
+
+        .content {
+          padding-right: 5%;
+          padding-left: 0;
         }
       }
     }

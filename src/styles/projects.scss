@@ -62,8 +62,16 @@
           rgba($color: $white, $alpha: 0.95) 100%
         );
 
+        @media (max-width: 1800px) {
+          height: 35%;
+        }
+
         @media (max-width: 1300px) {
           gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+          height: 30%;
         }
 
         h3 {

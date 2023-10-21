@@ -14,91 +14,11 @@ import projectImageSecond from "./assets/images/project-2.jpg";
 import projectImageThird from "./assets/images/project-3.jpg";
 import logo from "./assets/images/logo192.png";
 import sKey2 from "./assets/images/devices/sKey-2.jpg";
+import Device from "./pages/Device";
 
 export const Context = React.createContext();
 
 function App() {
-  const ProjectOneContent = (
-    <>
-      <div
-        className="slide"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          height: "60vh",
-        }}
-      >
-        <div
-          className="image"
-          style={{ width: "50%", height: "60vh", overflow: "hidden" }}
-        >
-          <img
-            src="https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-          />
-        </div>
-      </div>
-      <div
-        className="slide reverse"
-        style={{
-          display: "flex",
-          flexDirection: "row-reverse",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          height: "60vh",
-        }}
-      >
-        <div
-          className="content"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "50%",
-            paddingLeft: "5%",
-            height: "60vh",
-            gap: "1rem",
-          }}
-        >
-          <h1
-            style={{
-              fontFamily: "Roboto Bold, sans-serif",
-              fontSize: "35px",
-              color: "black",
-              textTransform: "uppercase",
-              marginBottom: "0.5rem",
-              textAlign: "left",
-              maxWidth: "100%",
-            }}
-          >
-            Sadržaj projekta 1
-          </h1>
-          <p
-            style={{
-              fontFamily: "Roboto Regular, sans-serif",
-              fontSize: "13px",
-              color: "black",
-              maxWidth: "100%",
-              textAlign: "left",
-            }}
-          >
-            Your project content goes here.
-          </p>
-        </div>
-      </div>
-    </>
-  );
-
   const [projects, setProjects] = useState([
     {
       slug: "projekt-1",
@@ -109,9 +29,9 @@ function App() {
       image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
-      content:
-        "<div className='slide' style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%', height: '60vh' }}><div className='image' style={{ width: '50%', height: '60vh', overflow: 'hidden' }}><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} /></div></div><div className='slide reverse' style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'center', width: '100%', height: '60vh' }}><div className='content' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '50%', paddingLeft: '5%', height: '60vh', gap: '1rem' }}><h1 style={{ fontFamily: 'Roboto Bold, sans-serif', fontSize: '35px', color: 'black', textTransform: 'uppercase', marginBottom: '0.5rem', textAlign: 'left', maxWidth: '100%' }}>Sadržaj projekta 1</h1><p style={{ fontFamily: 'Roboto Regular, sans-serif', fontSize: '13px', color: 'black', maxWidth: '100%', textAlign: 'left' }}>Your project content goes here.</p></div></div>",
       type: "Ulazi u zgrade",
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
     },
     {
       slug: "projekt-2",
@@ -122,7 +42,8 @@ function App() {
       image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
-      content: "Sadržaj projekta 1",
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
       type: "Ulazi u zgrade",
     },
     {
@@ -134,7 +55,8 @@ function App() {
       image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
-      content: "Sadržaj projekta 1",
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
       type: "Ulazi u zgrade",
     },
     {
@@ -146,7 +68,8 @@ function App() {
       image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
-      content: "Sadržaj projekta 1",
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
       type: "Ulazi u zgrade",
     },
     {
@@ -158,7 +81,9 @@ function App() {
       image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
-      content: "Sadržaj projekta 1",
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
+
       type: "Zatvaranje spremišta",
     },
     {
@@ -170,7 +95,8 @@ function App() {
       image: templateImage,
       address: "Adresa projekta 1",
       year: "2021",
-      content: "Sadržaj projekta 1",
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
       type: "Zatvaranje spremišta",
     },
   ]);
@@ -181,59 +107,138 @@ function App() {
       slug: "skey-2",
       image: templateImage,
       description:
-        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+        "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
       shortDescription: "All-metal Password standalone access",
       image: sKey2,
+      specifications: {
+        material: "Zinc Alloy",
+        inputVoltage: "DC12~24V",
+        idleCurrent: "≤50mA",
+        cardReadingType: "125KHz: EM/HID 13.56MHz: MF/CPU/NFC (ISO14443A)",
+        readingCardDistance: "125KHz: ≤5cm  13.56MHz: ≤2cm",
+        outputFormatCard:
+          "wiegand 26-37 bit (HID card output wiegand 26-37 automatically.)Keypad: 4 bit, 8 bit, virtual card number",
+        workingTemperature: "-20~60° C",
+        workingHumidity: "0~95% (no condensation)",
+        productDimension: "170 * 83 * 26mm",
+      },
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
     },
     {
       title: "sKey 2",
       slug: "skey-2",
       image: templateImage,
-      shortDescription: "All-metal Password standalone access",
-
       description:
-        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+        "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
+      shortDescription: "All-metal Password standalone access",
       image: sKey2,
+      specifications: {
+        material: "Zinc Alloy",
+        inputVoltage: "DC12~24V",
+        idleCurrent: "≤50mA",
+        cardReadingType: "125KHz: EM/HID 13.56MHz: MF/CPU/NFC (ISO14443A)",
+        readingCardDistance: "125KHz: ≤5cm  13.56MHz: ≤2cm",
+        outputFormatCard:
+          "wiegand 26-37 bit (HID card output wiegand 26-37 automatically.)Keypad: 4 bit, 8 bit, virtual card number",
+        workingTemperature: "-20~60° C",
+        workingHumidity: "0~95% (no condensation)",
+        productDimension: "170 * 83 * 26mm",
+      },
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
     },
     {
       title: "sKey 2",
       slug: "skey-2",
       image: templateImage,
-      shortDescription: "All-metal Password standalone access",
-
       description:
-        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
-      image: sKey2,
-    },
-    {
-      title: "sKey 2",
-      slug: "skey-2",
+        "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
       shortDescription: "All-metal Password standalone access",
-
-      image: templateImage,
-      description:
-        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
       image: sKey2,
-    },
-    {
-      title: "sKey 2",
-      slug: "skey-2",
-      image: templateImage,
-      shortDescription: "All-metal Password standalone access",
-
-      description:
-        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
-      image: sKey2,
+      specifications: {
+        material: "Zinc Alloy",
+        inputVoltage: "DC12~24V",
+        idleCurrent: "≤50mA",
+        cardReadingType: "125KHz: EM/HID 13.56MHz: MF/CPU/NFC (ISO14443A)",
+        readingCardDistance: "125KHz: ≤5cm  13.56MHz: ≤2cm",
+        outputFormatCard:
+          "wiegand 26-37 bit (HID card output wiegand 26-37 automatically.)Keypad: 4 bit, 8 bit, virtual card number",
+        workingTemperature: "-20~60° C",
+        workingHumidity: "0~95% (no condensation)",
+        productDimension: "170 * 83 * 26mm",
+      },
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
     },
     {
       title: "sKey 2",
       slug: "skey-2",
       image: templateImage,
-      shortDescription: "All-metal Password standalone access",
-
       description:
-        "All-metal Password standalone access, control/reader, Material:Zinc Alloy, Input Voltage:DC12~24V, Idle Current:≤50mA, Product Dimension:170 * 83 * 26mm     ",
+        "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
+      shortDescription: "All-metal Password standalone access",
       image: sKey2,
+      specifications: {
+        material: "Zinc Alloy",
+        inputVoltage: "DC12~24V",
+        idleCurrent: "≤50mA",
+        cardReadingType: "125KHz: EM/HID 13.56MHz: MF/CPU/NFC (ISO14443A)",
+        readingCardDistance: "125KHz: ≤5cm  13.56MHz: ≤2cm",
+        outputFormatCard:
+          "wiegand 26-37 bit (HID card output wiegand 26-37 automatically.)Keypad: 4 bit, 8 bit, virtual card number",
+        workingTemperature: "-20~60° C",
+        workingHumidity: "0~95% (no condensation)",
+        productDimension: "170 * 83 * 26mm",
+      },
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      description:
+        "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
+      shortDescription: "All-metal Password standalone access",
+      image: sKey2,
+      specifications: {
+        material: "Zinc Alloy",
+        inputVoltage: "DC12~24V",
+        idleCurrent: "≤50mA",
+        cardReadingType: "125KHz: EM/HID 13.56MHz: MF/CPU/NFC (ISO14443A)",
+        readingCardDistance: "125KHz: ≤5cm  13.56MHz: ≤2cm",
+        outputFormatCard:
+          "wiegand 26-37 bit (HID card output wiegand 26-37 automatically.)Keypad: 4 bit, 8 bit, virtual card number",
+        workingTemperature: "-20~60° C",
+        workingHumidity: "0~95% (no condensation)",
+        productDimension: "170 * 83 * 26mm",
+      },
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
+    },
+    {
+      title: "sKey 2",
+      slug: "skey-2",
+      image: templateImage,
+      description:
+        "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
+      shortDescription: "All-metal Password standalone access",
+      image: sKey2,
+      specifications: {
+        material: "Zinc Alloy",
+        inputVoltage: "DC12~24V",
+        idleCurrent: "≤50mA",
+        cardReadingType: "125KHz: EM/HID 13.56MHz: MF/CPU/NFC (ISO14443A)",
+        readingCardDistance: "125KHz: ≤5cm  13.56MHz: ≤2cm",
+        outputFormatCard:
+          "wiegand 26-37 bit (HID card output wiegand 26-37 automatically.)Keypad: 4 bit, 8 bit, virtual card number",
+        workingTemperature: "-20~60° C",
+        workingHumidity: "0~95% (no condensation)",
+        productDimension: "170 * 83 * 26mm",
+      },
+      content:
+        "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
     },
   ]);
 
@@ -269,6 +274,7 @@ function App() {
               <Route path="/kontaktiraj-nas" element={<ContactUs />} />
               <Route path="/projekti" element={<Projects />} />
               <Route path="/projekti/:slug" element={<Project />} />
+              <Route path="/uredaji/:slug" element={<Device />} />
             </Route>
           </Routes>
         </BrowserRouter>

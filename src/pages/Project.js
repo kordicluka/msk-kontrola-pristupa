@@ -43,6 +43,11 @@ const Project = () => {
         </p>
       </div>
 
+      <div
+        dangerouslySetInnerHTML={{ __html: project.content }}
+        className="project__content"
+      ></div>
+
       <div className="projects">
         <h1>
           {" "}

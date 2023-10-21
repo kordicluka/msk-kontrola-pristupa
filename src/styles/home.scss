@@ -465,7 +465,7 @@
         @include flex(column, flex-start, flex-start);
         padding-left: 5%;
 
-        @media only screen and (max-width: 1300px) {
+        @media only screen and (max-width: 1800px) {
           width: 100%;
           padding-left: 0;
         }
@@ -476,6 +476,10 @@
           height: 9vh;
           padding: 1rem 0;
           border-top: 1px solid $gray;
+
+          @media only screen and (max-width: 1800px) {
+            height: 11vh;
+          }
 
           @media only screen and (max-width: 1300px) {
             height: 11vh;
