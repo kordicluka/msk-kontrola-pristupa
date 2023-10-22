@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 10000;
     padding: 0 12.5%;
-    height: 60vh;
+    height: 75vh;
     position: relative;
     transform: translateY(-6vh);
     margin-bottom: 5vh;
@@ -132,7 +132,7 @@
           padding: 1rem 0;
           border-top: 1px solid $gray;
 
-          @media only screen and (max-width: 1800px) {
+          @media only screen and (max-width: 1600px) {
             height: 11vh;
           }
 
