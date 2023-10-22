@@ -278,7 +278,6 @@
 
     .services__container {
       @include flex(row, flex-start, center);
-      background-color: $secondary;
       padding-right: 12.5vw;
       width: 65%;
 
