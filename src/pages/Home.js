@@ -21,6 +21,17 @@ import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
 import Carousel from "../components/Carousel";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  name: yup.string().required("Ime i prezime je obavezno polje."),
+  email: yup
+    .string()
+    .email("Unesite ispravnu e-mail adresu.")
+    .required("E-mail je obavezno polje."),
+  telephone: yup.string().required("Broj telefona je obavezno polje."),
+});
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -35,6 +46,20 @@ const Home = () => {
     Aos.init({ duration: 1700 });
     window.scrollTo(0, 0);
   }, []);
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+      telephone: "",
+      address: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -628,7 +653,7 @@ const Home = () => {
             <img src={pinterest_logo} alt="pinterest_logo" />
           </div>
         </div>
-        <form className="form">
+        <form className="form" onSubmit={formik.handleSubmit}>
           <h1>
             Kontaktirajte nas ispunjavanjem <span>forme.</span>
           </h1>
@@ -638,14 +663,53 @@ const Home = () => {
           </p>
 
           <div className="row">
-            <input type="text" placeholder="Ime i prezime *" />
-            <input type="text" placeholder="Broj telefona *" />
+            <input
+              type="text"
+              placeholder="Ime i prezime *"
+              id="name"
+              name="name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+            />
+            <input
+              type="text"
+              placeholder="Broj telefona *"
+              id="telephone"
+              name="telephone"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.telephone}
+            />
           </div>
 
-          <input type="text" placeholder="Broj telefona *" />
-          <input type="text" placeholder="Adresa" />
+          <input
+            type="text"
+            placeholder="E-mail *"
+            id="email"
+            name="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          <input
+            type="text"
+            placeholder="Adresa"
+            id="address"
+            name="address"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.address}
+          />
 
-          <textarea placeholder="Poruka *"></textarea>
+          <textarea
+            placeholder="Poruka *"
+            id="message"
+            name="message"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.message}
+          ></textarea>
 
           <button className="btn">Pošalji</button>
           <p>
