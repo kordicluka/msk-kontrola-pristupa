@@ -127,7 +127,7 @@ function App() {
     },
     {
       title: "sKey 2",
-      slug: "skey-2",
+      slug: "skey-22",
       image: templateImage,
       description:
         "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
@@ -150,7 +150,7 @@ function App() {
     },
     {
       title: "sKey 2",
-      slug: "skey-2",
+      slug: "skey-23",
       image: templateImage,
       description:
         "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
@@ -173,7 +173,7 @@ function App() {
     },
     {
       title: "sKey 2",
-      slug: "skey-2",
+      slug: "skey-24",
       image: templateImage,
       description:
         "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
@@ -196,7 +196,7 @@ function App() {
     },
     {
       title: "sKey 2",
-      slug: "skey-2",
+      slug: "skey-25",
       image: templateImage,
       description:
         "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
@@ -219,7 +219,7 @@ function App() {
     },
     {
       title: "sKey 2",
-      slug: "skey-2",
+      slug: "skey-29",
       image: templateImage,
       description:
         "<ul style='margin-left: 1rem;display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; '><li>All-metal Password standalone access</li><li>control/reader</li><li>Material:Zinc Alloy</li><li>Input Voltage:DC12~24V</li><li>Product Dimension:170 * 83 * 26mm</li><li>Idle Current:≤50mA</li></ul>",
@@ -237,6 +237,7 @@ function App() {
         workingHumidity: "0~95% (no condensation)",
         productDimension: "170 * 83 * 26mm",
       },
+      link: "https://sebury.com/index.php/products_v_107_473.html",
       content:
         "<div class='slide'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div><div class='slide reverse'> <div class='image'><img src='https://res.cloudinary.com/dmqufec5z/image/upload/v1697821559/mother-daughter-with-shopping-bag_bdjmet.jpg' /></div><div class='content'><h1>Naslov</h1><p>1.Adopt the non-electromagnetic shielding metal access control patent technology, patent NO.:CN210610015U<p/> <p>2.Innovative All-metal Design,no antenna window, Large metal keypad, European and American Style<p/> <p>3.125KHz and 13.56MHz Dual-band antenna, support  EM/HID/MF/NFC cards<p/> <p>4.Standalone mode, anti-pass back mode: wiegand input, external card reader can be connected<p/> <p>5.Reader mode: wiegand ouput, LED and Buzzer control input<p/> <p>6.Fully potted process, IP68<p/></div></div>",
     },

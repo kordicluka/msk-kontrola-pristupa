@@ -4,19 +4,19 @@ import { Context } from "../App";
 import { Link } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 const Carousel = () => {
   const carousel = useRef();
   const displayWidth = useRef();
   const [translate, setTranslate] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     Aos.init({ duration: 1700 });
   }, []);
 
   const { projects, setProjects } = React.useContext(Context);
-
-  console.log(projects);
 
   const translateRight = () => {
     let carouselWidth = carousel.current.scrollWidth;
@@ -53,6 +53,23 @@ const Carousel = () => {
       setTranslate(translate + carousel.current.scrollWidth / projects.length);
     }
   };
+
+  const [projectsForCarousel, setProjectsForCarousel] = useState(projects);
+
+  // check if the link of the website is "/projekti/:slug"
+  useEffect(() => {
+    if (
+      location.pathname.split("/")[1] === "projekti" &&
+      location.pathname.split("/")[2] !== undefined
+    ) {
+      const projectSlug = location.pathname.split("/")[2];
+      const project = projects.find((project) => project.slug === projectSlug);
+      const index = projects.indexOf(project);
+      let projectsArray = [...projects];
+      projectsArray.splice(index, 1);
+      setProjectsForCarousel(projectsArray);
+    }
+  }, [location.pathname]);
 
   return (
     <>
@@ -108,7 +125,7 @@ const Carousel = () => {
           style={{ transform: `translateX(${translate}px)` }}
           ref={carousel}
         >
-          {projects.map((project) => (
+          {projectsForCarousel.map((project) => (
             <div
               className="project"
               data-aos="slide-up"

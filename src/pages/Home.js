@@ -475,19 +475,14 @@ const Home = () => {
         <div className="background__image">
           <img src={templateImage} alt="" />
         </div>
-        <div
-          className="image"
-          data-aos="fade-up"
-          data-aos-duration="350"
-          data-aos-once="false"
-        >
+        <div className="image">
           <img src={templateImage} alt="" />
         </div>
 
         <div
           className="content"
           data-aos="fade-up"
-          data-aos-duration="350"
+          data-aos-duration="450"
           data-aos-once="false"
         >
           <h2>Lorem impsum</h2>

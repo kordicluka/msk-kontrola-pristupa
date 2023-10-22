@@ -3,9 +3,9 @@ import contactImage from "../assets/images/contact.jpg";
 import { Context } from "../App";
 import { Link } from "react-router-dom";
 import "../styles/device.scss";
+import { useLocation } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useLocation } from "react-router-dom";
 
 const Device = () => {
   const { projects, setProjects, devices, setDevices } =
@@ -22,6 +22,7 @@ const Device = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    Aos.init({ duration: 1700 });
   }, [location.pathname]);
 
   function formatTitle(title) {
@@ -32,19 +33,39 @@ const Device = () => {
       .join(" ");
   }
 
+  const [restDevices, setRestDevices] = useState(devices);
+
+  useEffect(() => {
+    if (
+      location.pathname.split("/")[1] === "uredaji" &&
+      location.pathname.split("/")[2] !== undefined
+    ) {
+      const deviceSlug = location.pathname.split("/")[2];
+      const device = devices.find((device) => device.slug === deviceSlug);
+      const index = devices.indexOf(device);
+      let devicesArray = [...devices];
+      devicesArray.splice(index, 1);
+      setRestDevices(devicesArray);
+    }
+  }, [location.pathname]);
+
   return (
     <div className="page device">
-      <div className="device__hero">
+      <div className="device__hero" data-aos-duration="500" data-aos="fade-in">
         <div className="image">
           <img src={device.image} alt={device.title} />
         </div>
-        <div className="content">
+        <div className="content" data-aos-duration="500" data-aos="fade-in">
           <h1>{device.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: device.description }} />
         </div>
       </div>
 
-      <div className="device__specifications">
+      <div
+        className="device__specifications"
+        data-aos-duration="500"
+        data-aos="fade-in"
+      >
         {Object.entries(device.specifications).map(([title, value]) => (
           <div className="item" key={title}>
             <div className="title">{formatTitle(title)}</div>
@@ -64,7 +85,7 @@ const Device = () => {
           Pogledajte ostale <span>uredaje</span>{" "}
         </h1>
         <div className="devices__container">
-          {devices.map((device) => (
+          {restDevices.map((device) => (
             <div className="device" key={device.slug}>
               <div className="content">
                 <div className="top">

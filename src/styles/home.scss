@@ -268,14 +268,14 @@
         height: 17vh;
         position: relative;
         transform: translateY(10rem);
-        animation: slideService 0.4s ease-in-out forwards;
+        animation: slideService 0.3s ease-in-out forwards;
 
         &:nth-child(2) {
-          animation-delay: 0.1s;
+          animation-delay: 0.2s;
         }
 
         &:nth-child(3) {
-          animation-delay: 0.2s;
+          animation-delay: 0.3s;
         }
 
         &::before {
@@ -1045,7 +1045,7 @@
 @keyframes slideService {
   0% {
     opacity: 0;
-    transform: translateY(10rem);
+    transform: translateY(5rem);
   }
   100% {
     opacity: 1;
