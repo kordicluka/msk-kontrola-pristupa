@@ -5,7 +5,6 @@
     width: 100%;
     @include flex(row, flex-start, flex-start);
     background-color: $secondary;
-    height: 100vh;
 
     @media only screen and (max-width: 1000px) {
       height: 100%;
@@ -22,6 +21,7 @@
       padding-right: 12.5%;
       gap: 1rem;
       background-color: $light-gray;
+      height: 90vh;
 
       @media only screen and (max-width: 1300px) {
         padding-right: 5vw;
@@ -98,12 +98,13 @@
     }
 
     .info {
-      @include flex(column, flex-start, flex-start);
+      @include flex(column, space-between, flex-start);
       padding: 3rem;
       width: 50%;
       padding-left: 12.5%;
       gap: 1.4rem;
       color: $white;
+      height: 100%;
 
       @media only screen and (max-width: 1300px) {
         padding-left: 5vw;
@@ -112,7 +113,8 @@
       @media only screen and (max-width: 1000px) {
         width: 100%;
         padding: 3rem 5%;
-        @include flex(column, center, center);
+        @include flex(column, space-between, center);
+        height: 100vh;
       }
 
       h1 {
