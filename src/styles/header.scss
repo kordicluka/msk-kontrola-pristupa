@@ -10,6 +10,7 @@
   top: 0;
   z-index: 100000000000;
   padding: 0 12.5%;
+  border-top: 1px solid $secondary;
 
   .contact {
     @include flex(row, center, center);
