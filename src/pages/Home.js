@@ -549,7 +549,7 @@ const Home = () => {
           data-aos-duration="350"
           data-aos-delay="150"
         >
-          <span>U</span>ređaji koje koristimo
+          <span>Uređaji</span> koje koristimo
         </h1>
         <p
           data-aos-once="false"

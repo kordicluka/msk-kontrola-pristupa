@@ -82,7 +82,7 @@ const Device = () => {
       <div className="devices">
         <h1>
           {" "}
-          Pogledajte ostale <span>uredaje</span>{" "}
+          Pogledajte ostale <span>uređaje</span>{" "}
         </h1>
         <div className="devices__container">
           {restDevices.map((device) => (
