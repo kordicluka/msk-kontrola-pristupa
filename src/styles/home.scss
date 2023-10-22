@@ -13,40 +13,6 @@
       height: 82vh;
     }
 
-    .service {
-      position: absolute;
-      bottom: 0;
-      left: 12.5%;
-      padding: 2rem 2rem;
-      @include flex(column, flex-start, flex-start);
-      gap: 2rem;
-      background-color: rgba($color: $white, $alpha: 0.6);
-      backdrop-filter: blur(10px);
-      z-index: 2;
-      width: 25rem;
-      box-shadow: 0px 0px 10px 0px rgba($color: $black, $alpha: 0.1);
-      transform: translateY(50%);
-
-      @media only screen and (max-width: 1300px) {
-        left: 5%;
-        width: 90%;
-        gap: 1rem;
-      }
-
-      h2 {
-        font: 22px "Roboto Regular", sans-serif;
-        color: $black;
-        text-transform: uppercase;
-      }
-
-      p {
-        font: 13px "Roboto Light", sans-serif;
-        color: $black;
-        max-width: 100%;
-        margin: 0;
-      }
-    }
-
     .slider__button {
       position: absolute;
       left: 12.5%;
@@ -211,7 +177,6 @@
           gap: 1rem;
           padding-top: 0.4rem;
           line-height: 1.1;
-          letter-spacing: 1px;
           text-align: center;
           width: 60%;
 
@@ -244,104 +209,160 @@
 
   .services {
     width: 100%;
-    @include flex(column, flex-start, center);
-    padding: 0vh 12.5%;
-    margin-bottom: 5vh;
+    padding: 5vh 0;
+    @include flex(row, flex-start, center);
+    padding-bottom: 10vh;
 
-    @media only screen and (max-width: 1300px) {
-      padding: 0vh 5%;
+    @media only screen and (max-width: 1200px) {
+      @include flex(column, center, center);
+    }
+
+    .content {
+      @include flex(column, flex-start, center);
+      width: 35%;
+      padding: 0 2rem;
+      padding-left: 12.5vw;
+      height: 100%;
+
+      @media only screen and (max-width: 1200px) {
+        padding: 0 5%;
+        width: 100%;
+      }
+
+      h1 {
+        font: 35px "Roboto Regular", sans-serif;
+        color: $black;
+        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background-color: $primary-light;
+          content: "";
+        }
+        span {
+          color: $primary;
+        }
+
+        @media only screen and (max-width: 1200px) {
+          font: 28px "Roboto Regular", sans-serif;
+          width: 100%;
+          text-align: center;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      p {
+        font: 13px "Roboto Regular", sans-serif;
+        color: $black;
+        text-align: left;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+
+        @media only screen and (max-width: 1200px) {
+          font: 11px "Roboto Regular", sans-serif;
+          width: 100%;
+          text-align: center;
+        }
+      }
     }
 
     .services__container {
-      @include flex(row, center, center);
-      width: 100%;
-      transform: translateY(-1vh);
+      @include flex(row, flex-start, center);
+      background-color: $secondary;
+      padding-right: 12.5vw;
+      width: 65%;
 
-      @media only screen and (max-width: 900px) {
+      @media only screen and (max-width: 1300px) {
+        padding-right: 5vw;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        width: 100%;
+        padding: 0 5%;
+        background-color: $white;
+        margin-top: 3vh;
+      }
+
+      @media only screen and (max-width: 768px) {
         @include flex(column, center, center);
-        gap: 2rem;
       }
 
       .service {
-        width: calc(100% / 3);
-        @include flex(column, flex-start, center);
-        height: 17vh;
         position: relative;
-        transform: translateY(10rem);
-        animation: slideService 0.3s ease-in-out forwards;
+        width: calc(100% / 3);
+        height: 50vh;
 
-        &:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        &:nth-child(3) {
-          animation-delay: 0.3s;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          width: 30%;
-          height: 95%;
-          left: 0;
-          top: 0;
-          z-index: 0;
-          background-color: rgba($color: $white, $alpha: 0.6);
-          backdrop-filter: blur(10px);
-          box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
-        }
-
-        @media only screen and (max-width: 900px) {
+        @media only screen and (max-width: 768px) {
           width: 100%;
-          height: 18vh;
+          height: 40vh;
         }
 
-        .content {
-          left: 5%;
-          height: 17vh;
-          width: 90%;
-          padding: 2rem 2rem;
-          @include flex(column, flex-start, flex-start);
-          gap: 0.5rem;
-          background-color: rgba($color: #ffffff, $alpha: 1);
-          transform: translateY(-20%);
-          box-shadow: 0px 0px 20px 0px rgba($color: $black, $alpha: 0.1);
+        .image {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          filter: brightness(0.4);
 
-          @media only screen and (max-width: 1500px) {
-            height: 35vh;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
           }
         }
 
-        h2 {
-          font: 25px "Roboto Black", sans-serif;
-          color: $black;
-          text-transform: uppercase;
-
-          @media (max-width: 1300px) {
-            font-size: 20px;
-          }
-        }
-
-        p {
-          font: 12px "Roboto Regular", sans-serif;
-          color: $black;
-          max-width: 100%;
-          text-align: left;
-
-          @media (max-width: 1300px) {
-            font-size: 12px;
-          }
-        }
-
-        .outside__btn {
-          margin-top: 0.7rem;
+        .service__link {
           position: absolute;
-          bottom: 1rem;
-          left: 50%;
-          transform: translateX(-50%);
+          right: 0;
+          bottom: 0;
+          padding: 0.6rem 1rem;
+          background-color: $primary;
+          color: $white;
+          font: 13px "Roboto Light", sans-serif;
+          text-decoration: none;
 
-          @media only screen and (max-width: 1300px) {
-            bottom: 0;
+          &:hover {
+            background-color: $primary-light;
+          }
+        }
+
+        .service__content {
+          position: absolute;
+          left: 0;
+          bottom: 10%;
+          width: 100%;
+          height: 40%;
+          @include flex(column, flex-start, flex-start);
+          gap: 1rem;
+          padding: 1rem;
+          z-index: 2;
+
+          @media only screen and (max-width: 1700px) {
+            height: 50%;
+          }
+
+          h2 {
+            font: 20px "Roboto Bold", sans-serif;
+            color: $white;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font: 13px "Roboto Light", sans-serif;
+            color: $white;
+            max-width: 90%;
+            line-height: 1.5;
           }
         }
       }
@@ -365,16 +386,6 @@
       height: 100%;
       padding: 0 5%;
       flex-direction: column;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 50%;
-      left: 0;
-      top: 50%;
-      z-index: 0;
     }
 
     .content {
@@ -431,13 +442,12 @@
       }
 
       h1 {
-        font: 30px "Roboto SemiBold", sans-serif;
-        color: $dark-gray;
+        font: 35px "Roboto Regular", sans-serif;
+        color: $black;
         margin-bottom: 2rem;
-        text-transform: uppercase;
 
         @media only screen and (max-width: 1300px) {
-          font: 28px "Roboto Bold", sans-serif;
+          font: 28px "Roboto Regular", sans-serif;
           width: 100%;
           text-align: left;
         }
@@ -582,8 +592,8 @@
       }
 
       h1 {
-        font: 27px "Roboto SemiBold", sans-serif;
-        color: $dark-gray;
+        font: 27px "Roboto Regular", sans-serif;
+        color: $black;
         span {
           color: $primary;
         }
@@ -665,7 +675,7 @@
       }
 
       h1 {
-        font: 30px "Roboto Regular", sans-serif;
+        font: 30px "Roboto Light", sans-serif;
         color: $white;
         span {
           color: $primary;
@@ -706,20 +716,18 @@
     }
 
     h1 {
-      font: 35px "Roboto SemiBold", sans-serif;
-      color: $dark-gray;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      span {
-        color: $primary;
-      }
+      font: 35px "Roboto Regular", sans-serif;
+      color: $black;
+      margin-bottom: 2rem;
 
       @media only screen and (max-width: 1300px) {
-        font: 28px "Roboto Bold", sans-serif;
-        text-align: center;
-        max-width: 100%;
+        font: 28px "Roboto Regular", sans-serif;
+        width: 100%;
+        text-align: left;
+      }
+
+      span {
+        color: $primary;
       }
     }
 
@@ -797,9 +805,8 @@
             width: 100%;
 
             h3 {
-              font: 35px "Roboto Bold", sans-serif;
+              font: 35px "Roboto Regular", sans-serif;
               color: $black;
-              text-transform: uppercase;
               margin-bottom: 0.5rem;
             }
 
@@ -977,20 +984,19 @@
     }
 
     h1 {
-      font: 35px "Roboto SemiBold", sans-serif;
-      color: $dark-gray;
-      margin-bottom: 0.5rem;
+      font: 35px "Roboto Regular", sans-serif;
+      color: $black;
+      margin-bottom: 2rem;
       text-transform: uppercase;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      span {
-        color: $primary;
-      }
 
       @media only screen and (max-width: 1300px) {
-        font: 28px "Roboto Bold", sans-serif;
-        text-align: center;
-        max-width: 100%;
+        font: 28px "Roboto Regular", sans-serif;
+        width: 100%;
+        text-align: left;
+      }
+
+      span {
+        color: $primary;
       }
     }
 

@@ -149,6 +149,7 @@ const Home = () => {
             <div className="slide__content">
               <h2>{slide.subtitle}</h2>
               <h1>{slide.title}</h1>
+              <div className="slide__description">{slide.description}</div>
               <div className="slide__actions">{slide.actions}</div>
             </div>
           </div>
@@ -200,9 +201,24 @@ const Home = () => {
       </div>
 
       <div className="services">
+        <div className="content">
+          <h1>
+            <span>U</span>sluge koje vam pružamo
+          </h1>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s psum has been tstandard dummy text ever since the 1500s
+          </p>
+        </div>
         <div className="services__container">
           <div className="service">
-            <div className="content">
+            <div className="image">
+              <img src={contactImage} alt="" />
+            </div>{" "}
+            <Link className="service__link" to="/kontaktiraj-nas">
+              Saznajte više
+            </Link>
+            <div className="service__content">
               <h2>Ulazi u zgrade</h2>
               <p>
                 Lorem Ipsum has been the industry's standard dummy text ever
@@ -211,7 +227,13 @@ const Home = () => {
             </div>
           </div>
           <div className="service">
-            <div className="content">
+            <div className="image">
+              <img src={heroSlideImageThird} alt="" />
+            </div>{" "}
+            <Link className="service__link" to="/kontaktiraj-nas">
+              Saznajte više
+            </Link>
+            <div className="service__content">
               <h2>Zaštita prostorija</h2>
               <p>
                 Lorem Ipsum has been the industry's standard dummy text ever
@@ -221,7 +243,13 @@ const Home = () => {
             </div>
           </div>
           <div className="service">
-            <div className="content">
+            <div className="image">
+              <img src={heroSlideImageSecond} alt="" />
+            </div>{" "}
+            <Link className="service__link" to="/kontaktiraj-nas">
+              Saznajte više
+            </Link>
+            <div className="service__content">
               <h2>Elektronski kontroleri</h2>
               <p>
                 Lorem Ipsum has been the industry's standard dummy text ever
@@ -505,7 +533,7 @@ const Home = () => {
 
       <div className="projects">
         <h1 data-aos-once="false" data-aos="fade-up" data-aos-duration="350">
-          Izdvojeni<span>projekti</span>
+          Izdvojeni <span>projekti</span>
         </h1>
 
         <p data-aos-once="false" data-aos="fade-up" data-aos-duration="350">
@@ -521,7 +549,7 @@ const Home = () => {
           data-aos-duration="350"
           data-aos-delay="150"
         >
-          <span>Uređaji</span> koje koristimo
+          <span>U</span>ređaji koje koristimo
         </h1>
         <p
           data-aos-once="false"
