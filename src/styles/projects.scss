@@ -25,12 +25,17 @@
       }
 
       @media (max-width: 1300px) {
-        width: calc(100% / 2 - 1rem);
+        width: calc(90vw / 3);
         height: 58vh;
       }
 
       @media (max-width: 1000px) {
-        width: 100%;
+        width: calc(90vw / 2);
+      }
+
+      @media (max-width: 768px) {
+        width: 90vw;
+        height: 62vh;
       }
 
       .image {
@@ -63,7 +68,7 @@
         );
 
         @media (max-width: 1800px) {
-          height: 35%;
+          height: 39%;
         }
 
         @media (max-width: 1300px) {
@@ -72,6 +77,9 @@
 
         @media (max-width: 768px) {
           height: 30%;
+        }
+        @media (max-width: 400px) {
+          height: 35%;
         }
 
         h3 {
