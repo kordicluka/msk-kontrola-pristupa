@@ -110,7 +110,7 @@
       .content {
         @include flex(column, flex-start, flex-start);
         width: calc(90% - 1rem);
-        gap: 1rem;
+        gap: 0.5rem;
         height: 30%;
         padding: 1.5rem 1rem;
         position: absolute;
@@ -124,7 +124,7 @@
           rgba($color: $white, $alpha: 0.95) 100%
         );
 
-        @media (max-width: 1700px) {
+        @media (max-width: 1600px) {
           height: 39%;
         }
 
