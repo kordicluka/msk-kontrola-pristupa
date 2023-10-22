@@ -79,6 +79,10 @@
         @media (max-width: 768px) {
           height: 35%;
         }
+
+        @media (max-width: 400px) {
+          height: 40%;
+        }
         h3 {
           font: 25px "Roboto Bold", sans-serif;
           color: $black;

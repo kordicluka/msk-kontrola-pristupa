@@ -32,8 +32,8 @@
     }
 
     h2 {
-      font: 20px "Roboto SemiBold", sans-serif;
-      color: $dark-gray;
+      font: 20px "Roboto Regular", sans-serif;
+      color: $black;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
       text-transform: uppercase;
@@ -50,18 +50,16 @@
     }
 
     h1 {
-      font: 65px "Roboto SemiBold", sans-serif;
-      color: $dark-gray;
+      font: 45px "Roboto Regular", sans-serif;
+      color: $black;
       margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      text-transform: uppercase;
       margin-bottom: 1.5rem;
       span {
         color: $primary;
       }
 
       @media only screen and (max-width: 1300px) {
-        font: 28px "Roboto Bold", sans-serif;
+        font: 30px "Roboto Regular", sans-serif;
         text-align: center;
         max-width: 100%;
       }
@@ -142,14 +140,13 @@
         }
 
         h1 {
-          font: 45px "Roboto Bold", sans-serif;
+          font: 35px "Roboto Regular", sans-serif;
           color: $black;
-          text-transform: uppercase;
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
           text-align: left;
 
           @media only screen and (max-width: 1300px) {
-            font: 28px "Roboto Bold", sans-serif;
+            font: 28px "Roboto Regular", sans-serif;
             text-align: center;
             max-width: 100%;
           }
@@ -198,7 +195,7 @@
     }
 
     h1 {
-      font: 35px "Roboto SemiBold", sans-serif;
+      font: 35px "Roboto Regular", sans-serif;
       color: $dark-gray;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
@@ -209,7 +206,7 @@
       }
 
       @media only screen and (max-width: 1300px) {
-        font: 28px "Roboto Bold", sans-serif;
+        font: 28px "Roboto Regular", sans-serif;
         text-align: center;
         max-width: 100%;
       }
