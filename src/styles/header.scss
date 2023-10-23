@@ -2,7 +2,16 @@
 
 .top__header {
   @include flex(row, space-between, center);
-  background-color: $secondary;
+  background: linear-gradient(
+    90deg,
+    #424242,
+    #383838,
+    #363636,
+    #535353,
+    rgb(56, 56, 56)
+  );
+  background-size: 500% 500%;
+  animation: gradientMove 5s linear infinite;
   gap: 1rem;
   width: 100%;
   height: 4vh;

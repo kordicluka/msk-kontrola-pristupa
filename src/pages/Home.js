@@ -180,6 +180,13 @@ const Home = () => {
           </div>
         ))}
 
+        <div className="bottom__text">
+          <p>
+            <span>MSK</span> je tvrtka koja se bavi kontrolom pristupa u
+            zgradam.
+          </p>
+        </div>
+
         <button
           className="slider__button"
           onClick={() =>
@@ -387,172 +394,6 @@ const Home = () => {
         </div>
         <div className="image">
           <img src={heroSlideImageFirst} alt="" />
-        </div>
-      </div>
-
-      <div className="devices" style={{ display: "none" }}>
-        <div className="col-1">
-          <div className="content">
-            <h1>Elektronski kontroleri</h1>
-
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s
-            </p>
-
-            <p>
-              Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-              pružajući inovativna rješenja za siguran i jednostavan ulazak.
-              Naša tehnologija se temelji na sigurnim sebury uređajima,
-              omogućujući stanarima i ostalima da koriste privjeske, kartice ili
-              PIN-ove za brz i pouzdan ulaz u objekte
-            </p>
-
-            <Link className="link" to="/kontaktiraj-nas">
-              Pogledaj više
-            </Link>
-          </div>
-          <div className="image">
-            <img
-              src={heroSlideImageFirst}
-              alt=""
-              className={deviceIndex === 1 ? "active" : ""}
-            />
-            <img
-              className={deviceIndex === 2 ? "active" : ""}
-              src={heroSlideImageSecond}
-              alt=""
-            />
-            <img
-              className={deviceIndex === 3 ? "active" : ""}
-              src={heroSlideImageThird}
-              alt=""
-            />
-            <img
-              className={deviceIndex === 4 ? "active" : ""}
-              src={templateImage}
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="col-2">
-          <div className="image">
-            <img src={heroSlideImageFirst} className="active" alt="" />
-          </div>
-          <div className="content">
-            <h1>Narukvice, ogrlice, kartice</h1>
-
-            <p>
-              Vaša firma se ističe u industriji kontrole pristupa u zgradama,
-              pružajući inovativna rješenja za siguran i jednostavan ulazak.
-              Naša tehnologija se temelji na sigurnim sebury uređajima,
-              omogućujući stanarima i ostalima da koriste privjeske, kartice ili
-              PIN-ove za brz i pouzdan ulaz u objekte
-            </p>
-
-            <div className="list">
-              <div
-                className={deviceIndex === 1 ? "item active" : "item"}
-                onMouseEnter={() => setDeviceIndex(1)}
-              >
-                <div className="index">01</div>
-                <div className="container">
-                  <h3>OGRLICE</h3>
-                  <p>
-                    Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
-                    Jednostavnim prislonom kartice, malog privjeska prema čitaču
-                    i otvaraju se ulazna vrata.
-                  </p>
-                  <Link className="link" to="/kontaktiraj-nas">
-                    Pogledaj više
-                  </Link>
-                </div>
-              </div>
-              <div
-                className={deviceIndex === 2 ? "item active" : "item"}
-                onMouseEnter={() => setDeviceIndex(2)}
-              >
-                <div className="index">02</div>
-                <div className="container">
-                  <h3>NARUKVICE</h3>
-                  <p>
-                    Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
-                    Jednostavnim prislonom kartice, malog privjeska prema čitaču
-                    i otvaraju se ulazna vrata.
-                  </p>
-                  <Link className="link" to="/kontaktiraj-nas">
-                    Pogledaj više
-                  </Link>
-                </div>
-              </div>
-              <div
-                className={deviceIndex === 3 ? "item active" : "item"}
-                onMouseEnter={() => setDeviceIndex(3)}
-              >
-                <div className="index">03</div>
-                <div className="container">
-                  <h3>ULAZ SA PINOM</h3>
-                  <p>
-                    Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
-                    Jednostavnim prislonom kartice, malog privjeska prema čitaču
-                    i otvaraju se ulazna vrata.
-                  </p>
-                  <Link className="link" to="/kontaktiraj-nas">
-                    Pogledaj više
-                  </Link>
-                </div>
-              </div>
-              <div
-                className={deviceIndex === 4 ? "item active" : "item"}
-                onMouseEnter={() => setDeviceIndex(4)}
-              >
-                <div className="index">04</div>
-                <div className="container">
-                  <h3>KARTICE</h3>
-                  <p>
-                    Korištenjem naših usluga ulaz u zgradu je znatno olakšan.
-                    Jednostavnim prislonom kartice, malog privjeska prema čitaču
-                    i otvaraju se ulazna vrata.
-                  </p>
-                  <Link className="link" to="/kontaktiraj-nas">
-                    Pogledaj više
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="whole__image__section">
-        <div className="background__image">
-          <img src={templateImage} alt="" />
-        </div>
-        <div className="image">
-          <img src={templateImage} alt="" />
-        </div>
-
-        <div
-          className="content"
-          data-aos="fade-up"
-          data-aos-duration="450"
-          data-aos-once="false"
-        >
-          <h2>Lorem impsum</h2>
-          <h1>Kontrola pristupa</h1>
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text ever since the 1500s
-          </p>{" "}
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text ever since the 1500s
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s psum has been tstandard dummy text ever since the 1500s
-          </p>
-          <Link className="btn" to="kontaktiraj-nas">
-            Pogledajte više
-          </Link>
         </div>
       </div>
 

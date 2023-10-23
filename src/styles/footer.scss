@@ -4,7 +4,7 @@
   @include flex(column, center, center);
   width: 100%;
   position: relative;
-  background-color: $secondary-dark;
+  background-color: $dark-gray;
 
   .box-container {
     width: 100%;
@@ -140,7 +140,16 @@
   .rights {
     width: 100%;
     padding: 0 12.5%;
-    background-color: $secondary;
+    background: linear-gradient(
+      90deg,
+      #202020,
+      #1f1f1f,
+      #292929,
+      #292929,
+      rgb(29, 29, 29)
+    );
+    background-size: 500% 500%;
+    animation: gradientMove 5s linear infinite;
     @include flex(column, center, center);
     gap: 0.5rem;
 
