@@ -4,8 +4,16 @@
   .contact {
     width: 100%;
     @include flex(row, flex-start, flex-start);
-    background-color: $secondary;
-
+    background: linear-gradient(
+      90deg,
+      #333333,
+      #292929,
+      #181818,
+      #363636,
+      rgb(51, 51, 51)
+    );
+    background-size: 500% 500%;
+    animation: gradientMove 5s linear infinite;
     @media only screen and (max-width: 1000px) {
       height: 100%;
       @include flex(column, center, center);
