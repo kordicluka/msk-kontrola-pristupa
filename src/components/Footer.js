@@ -25,9 +25,6 @@ const Footer = () => {
             <div className="socials">
               <img src={facebook_logo} alt="facebook_logo" />
               <img src={instagram_logo} alt="instagram_logo" />
-              <img src={twitter_logo} alt="twitter_logo" />
-              <img src={tiktok_logo} alt="tiktok_logo" />
-              <img src={pinterest_logo} alt="pinterest_logo" />
             </div>
           </div>
           <div className="box">

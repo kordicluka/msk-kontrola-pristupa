@@ -66,9 +66,6 @@ const Header = () => {
         <div className="socials">
           <img src={facebook_logo} alt="facebook_logo" />
           <img src={instagram_logo} alt="instagram_logo" />
-          <img src={twitter_logo} alt="twitter_logo" />
-          <img src={tiktok_logo} alt="tiktok_logo" />
-          <img src={pinterest_logo} alt="pinterest_logo" />
         </div>
       </div>
       <div className="navbar">
@@ -80,11 +77,19 @@ const Header = () => {
 
         <div className="navbar__center">
           <NavLink to="/" exact>
-            Početna
+            <span>Početna</span>
           </NavLink>{" "}
-          <NavLink to="/o-nama">O nama</NavLink>
-          <NavLink to="/projekti">Projekti</NavLink>
-          <NavLink to="/uredaji">Uređaji</NavLink>
+          <NavLink to="/o-nama">
+            <span>O nama</span>
+          </NavLink>
+          <NavLink to="/projekti">
+            {" "}
+            <span>Projekti</span>
+          </NavLink>
+          <NavLink to="/uredaji">
+            {" "}
+            <span>Uređaji</span>
+          </NavLink>
         </div>
         <div className="navbar__right">
           <NavLink className="btn" to="/kontaktiraj-nas">
@@ -137,9 +142,6 @@ const Header = () => {
           <div className="socials">
             <img src={facebook_logo} alt="facebook_logo" />
             <img src={instagram_logo} alt="instagram_logo" />
-            <img src={twitter_logo} alt="twitter_logo" />
-            <img src={tiktok_logo} alt="tiktok_logo" />
-            <img src={pinterest_logo} alt="pinterest_logo" />
           </div>
           <div className="rights">
             <p>© 2023 MSK. Sva prava pridržana.</p>
