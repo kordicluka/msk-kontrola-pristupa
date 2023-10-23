@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import contactImage from "../assets/images/contact.jpg";
 import facebook_logo from "../assets/images/socials/facebook_logo.png";
 import instagram_logo from "../assets/images/socials/instagram_logo.png";
@@ -9,32 +9,30 @@ import mapImage from "../assets/images/map.png";
 import "../styles/contact.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import * as yup from "yup";
-import { useFormik } from "formik";
-
-const validationSchema = yup.object({
-  name: yup.string().required("Ime i prezime je obavezno polje."),
-  email: yup
-    .string()
-    .email("Unesite ispravnu e-mail adresu.")
-    .required("E-mail je obavezno polje."),
-  telephone: yup.string().required("Broj telefona je obavezno polje."),
-});
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      message: "",
-      telephone: "",
-      address: "",
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_tvmzlls",
+        "template_xgudaqm",
+        form.current,
+        "mtd5i1kHo1o6AZeMR"
+      )
+      .then(
+        (result) => {
+          alert("Uspješno ste poslali poruku!");
+        },
+        (error) => {
+          alert("Došlo je do greške. Pokušajte ponovno.");
+        }
+      );
+  };
 
   useEffect(() => {
     Aos.init({ duration: 1700 });
@@ -86,7 +84,7 @@ const ContactUs = () => {
             <img src={pinterest_logo} alt="pinterest_logo" />
           </div>
         </div>
-        <form className="form" onSubmit={formik.handleSubmit}>
+        <form className="form" ref={form} onSubmit={sendEmail}>
           <h1>
             Kontaktirajte nas ispunjavanjem <span>forme.</span>
           </h1>
@@ -101,47 +99,21 @@ const ContactUs = () => {
               placeholder="Ime i prezime *"
               id="name"
               name="name"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
             />
             <input
               type="text"
               placeholder="Broj telefona *"
               id="telephone"
               name="telephone"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.telephone}
             />
           </div>
 
-          <input
-            type="text"
-            placeholder="E-mail *"
-            id="email"
-            name="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          <input
-            type="text"
-            placeholder="Adresa"
-            id="address"
-            name="address"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.address}
-          />
+          <input type="text" placeholder="E-mail *" id="email" name="email" />
 
           <textarea
             placeholder="Poruka *"
             id="message"
             name="message"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.message}
           ></textarea>
 
           <button className="btn">Pošalji</button>
