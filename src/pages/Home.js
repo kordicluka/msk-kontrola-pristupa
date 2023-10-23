@@ -183,7 +183,7 @@ const Home = () => {
         <div className="bottom__text">
           <p>
             <span>MSK</span> je tvrtka koja se bavi kontrolom pristupa u
-            zgradam.
+            zgradama.
           </p>
         </div>
 
@@ -395,6 +395,22 @@ const Home = () => {
         <div className="image">
           <img src={heroSlideImageFirst} alt="" />
         </div>
+      </div>
+
+      <div className="contact__home__section">
+        <div className="image">
+          <img src={contactImage} alt="" />
+        </div>
+
+        <h1>
+          Kako do <span> nas?</span>
+        </h1>
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since
+        </p>
+        <Link className="btn" to="/kontaktiraj-nas">
+          Kontaktirajte nas
+        </Link>
       </div>
 
       <div className="projects">
