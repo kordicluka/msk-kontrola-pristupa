@@ -21,7 +21,7 @@ export const Context = React.createContext();
 function App() {
   const [projects, setProjects] = useState([
     {
-      slug: "projekt-1",
+      slug: "instalacija-wifi-kontrolera-u-novom-zagrbu",
       title: "Instalacija WiFi kontrolera u Novom Zagrbu",
       shortDescription:
         "Vaša firma se ističe u industriji ki jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
