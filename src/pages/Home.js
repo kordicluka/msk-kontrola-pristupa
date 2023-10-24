@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import heroSlideImageFirst from "../assets/images/hero-slide-1.jpg";
 import heroSlideImageSecond from "../assets/images/hero-slide-2.jpg";
@@ -21,17 +21,7 @@ import pinterest_logo from "../assets/images/socials/pinterest_logo.png";
 import Carousel from "../components/Carousel";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useFormik } from "formik";
-import * as yup from "yup";
-
-const validationSchema = yup.object({
-  name: yup.string().required("Ime i prezime je obavezno polje."),
-  email: yup
-    .string()
-    .email("Unesite ispravnu e-mail adresu.")
-    .required("E-mail je obavezno polje."),
-  telephone: yup.string().required("Broj telefona je obavezno polje."),
-});
+import emailjs from "@emailjs/browser";
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -47,19 +37,27 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      message: "",
-      telephone: "",
-      address: "",
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_tvmzlls",
+        "template_xgudaqm",
+        form.current,
+        "mtd5i1kHo1o6AZeMR"
+      )
+      .then(
+        (result) => {
+          alert("Uspješno ste poslali poruku!");
+        },
+        (error) => {
+          alert("Došlo je do greške. Pokušajte ponovno.");
+        }
+      );
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -510,7 +508,7 @@ const Home = () => {
             <img src={pinterest_logo} alt="pinterest_logo" />
           </div>
         </div>
-        <form className="form" onSubmit={formik.handleSubmit}>
+        <form className="form" ref={form} onSubmit={sendEmail}>
           <h1>
             Kontaktirajte nas ispunjavanjem <span>forme.</span>
           </h1>
@@ -525,47 +523,21 @@ const Home = () => {
               placeholder="Ime i prezime *"
               id="name"
               name="name"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
             />
             <input
               type="text"
               placeholder="Broj telefona *"
               id="telephone"
               name="telephone"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.telephone}
             />
           </div>
 
-          <input
-            type="text"
-            placeholder="E-mail *"
-            id="email"
-            name="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          <input
-            type="text"
-            placeholder="Adresa"
-            id="address"
-            name="address"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.address}
-          />
+          <input type="text" placeholder="E-mail *" id="email" name="email" />
 
           <textarea
             placeholder="Poruka *"
             id="message"
             name="message"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.message}
           ></textarea>
 
           <button className="btn">Pošalji</button>

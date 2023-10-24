@@ -240,13 +240,13 @@
     }
 
     h1 {
-      font: 35px "Roboto Regular", sans-serif;
-      color: $black;
+      font: 40px "Roboto SemiBold", sans-serif;
+      color: $dark-gray;
       margin-bottom: 2rem;
       text-transform: uppercase;
 
       @media only screen and (max-width: 1300px) {
-        font: 28px "Roboto Regular", sans-serif;
+        font: 35px "Roboto SemiBold", sans-serif;
         width: 100%;
         text-align: center;
       }
