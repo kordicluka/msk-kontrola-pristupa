@@ -22,8 +22,10 @@ function App() {
   const [projects, setProjects] = useState([
     {
       slug: "projekt-1",
-      title: "Projekt 1",
-      shortDescription: "Vaša firma se ističe u industriji kontrole prisazak. ",
+      title: "Instalacija WiFi kontrolera u Novom Zagrbu",
+      shortDescription:
+        "Vaša firma se ističe u industriji ki jednostavan ulazak. Vaša firma se ističe u industriji kontrole pristupa u zgradama, pružajući inovativna rješenja za siguran i jednostavan ulazak. ",
+
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
       image: templateImage,
