@@ -134,6 +134,8 @@ const Carousel = () => {
             >
               <div className="image">
                 <img src={project.image} alt={project.title} />
+
+                <p className="project__type">{project.type}</p>
               </div>
               <div className="content">
                 <h3>{project.title}</h3>
