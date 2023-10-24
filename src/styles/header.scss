@@ -121,6 +121,7 @@
 
     @media (max-width: 1300px) {
       padding: 0.2rem;
+      @include flex(row, center, center);
     }
 
     @media (max-width: 768px) {
@@ -135,7 +136,7 @@
       padding: 0.2rem 0;
 
       @media (max-width: 1300px) {
-        padding: 0.3rem 0;
+        padding: 0.3rem 5%;
       }
 
       img {
