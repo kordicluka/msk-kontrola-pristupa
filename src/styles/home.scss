@@ -295,9 +295,10 @@
         }
 
         @media only screen and (max-width: 1200px) {
-          font: 35px "Roboto SemiBold", sans-serif;
+          font: 35px "Roboto Bold", sans-serif;
           width: 100%;
           text-align: center;
+          padding-left: 0;
 
           &::before {
             display: none;
@@ -1051,12 +1052,20 @@
     @include flex(column, center, center);
     position: relative;
     padding-bottom: 78vh;
-    margin-top: 5vh;
+    margin-top: 10vh;
 
     @media only screen and (max-width: 1300px) {
       padding: 0 5%;
-      padding-bottom: 60vh;
+      padding-bottom: 78vh;
       padding-top: 5vh;
+    }
+
+    @media only screen and (max-width: 768px) {
+      padding-bottom: 88vh;
+    }
+
+    @media (max-width: 400px) {
+      padding-bottom: 95vh;
     }
 
     h1 {
