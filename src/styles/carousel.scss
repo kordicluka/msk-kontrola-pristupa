@@ -110,13 +110,27 @@
 
         .project__type {
           position: absolute;
-          top: 0;
-          left: 0;
+          bottom: 0;
+          right: 0;
           padding: 0.5rem 1rem;
           background-color: $primary;
           color: $white;
-          font: 12px "Roboto Regular", sans-serif;
+          font: 13px "Roboto SemiBold", sans-serif;
           z-index: 10;
+          letter-spacing: 1px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            right: 99.5%;
+            bottom: 0;
+            width: 10px;
+            z-index: 11;
+            height: 102%;
+            background-color: $primary;
+
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+          }
         }
 
         img {
