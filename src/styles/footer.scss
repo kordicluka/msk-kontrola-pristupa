@@ -42,6 +42,7 @@
         .logo {
           height: 13vh;
           object-fit: contain;
+          margin-bottom: 1rem;
 
           @media (max-width: 768px) {
             width: 100%;
@@ -89,10 +90,10 @@
       }
 
       h3 {
-        font: 1.6rem "Roboto Regular", sans-serif;
+        font: 23px "Roboto SemiBold", sans-serif;
         margin-bottom: 1.5rem;
         color: $white;
-        text-transform: uppercase;
+        letter-spacing: 0.1rem;
 
         @media (max-width: 768px) {
           font-size: 1.3rem;
@@ -129,9 +130,9 @@
         }
 
         .btn {
-          color: $white;
-          font: 12px "Roboto Regular", sans-serif;
-          margin-top: 0.5rem;
+          padding: 0.6rem 1.3rem;
+          font: 12px "Roboto SemiBold", sans-serif;
+          text-transform: uppercase;
         }
       }
     }
