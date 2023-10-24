@@ -68,7 +68,7 @@
           rgba($color: $white, $alpha: 0.95) 100%
         );
 
-        @media (max-width: 1800px) {
+        @media (max-width: 1600px) {
           height: 39%;
         }
 
@@ -84,9 +84,8 @@
           height: 40%;
         }
         h3 {
-          font: 25px "Roboto Bold", sans-serif;
+          font: 27px "Roboto Black", sans-serif;
           color: $black;
-          text-transform: uppercase;
 
           @media (max-width: 1300px) {
             font-size: 20px;
