@@ -26,7 +26,13 @@ const Devices = () => {
       <div className="devices">
         <div className="devices__container">
           {devices.map((device) => (
-            <div className="device" key={device.slug}>
+            <div
+              className="device"
+              key={device.slug}
+              data-aos-once="false"
+              data-aos="fade-up"
+              data-aos-duration="350"
+            >
               <div className="content">
                 <div className="top">
                   <h3>{device.title}</h3>

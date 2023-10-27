@@ -75,6 +75,15 @@ const Device = () => {
       </div>
 
       <div
+        className="video"
+        style={{ display: device.video ? "block" : "none" }}
+      >
+        <video controls autoPlay muted loop>
+          <source src={device.video} type="video/mp4" />
+        </video>
+      </div>
+
+      <div
         className="device__content"
         dangerouslySetInnerHTML={{ __html: device.content }}
       ></div>

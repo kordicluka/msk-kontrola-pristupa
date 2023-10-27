@@ -77,7 +77,11 @@ const ContactUs = () => {
           </p>
 
           <div className="socials">
-            <img src={facebook_logo} alt="facebook_logo" />
+            <img
+              src={facebook_logo}
+              alt="facebook_logo"
+              href="https://www.facebook.com/profile.php?id=61551984313508"
+            />
             <img src={instagram_logo} alt="instagram_logo" />
           </div>
         </div>

@@ -29,21 +29,10 @@
         border-top: 1px solid $gray;
       }
 
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        z-index: 2;
-        background-color: rgba($color: $gray, $alpha: 0.3);
-      }
-
       img {
         width: 100%;
         height: 100% !important;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
       }
     }
@@ -62,7 +51,7 @@
       }
 
       h1 {
-        font: 45px "Roboto Regular", sans-serif;
+        font: 45px "Roboto SemiBold", sans-serif;
         color: $black;
         margin-bottom: 2rem;
 
@@ -154,7 +143,7 @@
 
       .image {
         width: 50%;
-        height: 100%;
+        height: 60vh;
         overflow: hidden;
         @media only screen and (max-width: 1300px) {
           width: 100%;
@@ -164,14 +153,7 @@
         img {
           width: 100%;
           height: 100% !important;
-          object-fit: cover;
-          object-position: center;
-        }
-
-        video {
-          width: 100%;
-          height: 100% !important;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
         }
       }
@@ -224,6 +206,22 @@
           padding-right: 5%;
           padding-left: 0;
         }
+      }
+    }
+  }
+
+  .video {
+    width: 100%;
+    padding: 5vh 12.5%;
+    @include flex(column, center, center);
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      @media only screen and (max-width: 1300px) {
+        height: 50vh;
       }
     }
   }
@@ -298,17 +296,6 @@
           overflow: hidden;
           position: relative;
 
-          &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: 2;
-            background-color: rgba($color: $gray, $alpha: 0.3);
-          }
-
           img {
             width: 100%;
             height: 100% !important;
@@ -328,7 +315,7 @@
             width: 100%;
 
             h3 {
-              font: 35px "Roboto Regular", sans-serif;
+              font: 35px "Roboto SemiBold", sans-serif;
               color: $black;
               margin-bottom: 0.5rem;
             }
