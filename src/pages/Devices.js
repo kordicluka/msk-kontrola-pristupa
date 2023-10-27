@@ -42,7 +42,7 @@ const Devices = () => {
                   <Link className="outside__btn" to={`/uredaji/${device.slug}`}>
                     Pogledaj više
                   </Link>
-                  <Link className="link" to={`/uredaji/${device.slug}`}>
+                  <Link className="link" to="/uredaji">
                     Idi na stranicu
                   </Link>
                 </div>

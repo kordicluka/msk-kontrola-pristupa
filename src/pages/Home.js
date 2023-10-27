@@ -456,10 +456,10 @@ const Home = () => {
                   <p>{device.shortDescription}</p>
                 </div>
                 <div className="bottom">
-                  <Link className="outside__btn" to="/kontaktiraj-nas">
+                  <Link className="outside__btn" to={`/uredaji/${device.slug}`}>
                     Pogledaj više
                   </Link>
-                  <Link className="link" to="/kontaktiraj-nas">
+                  <Link className="link" to="/uredaji">
                     Idi na stranicu
                   </Link>
                 </div>
